@@ -14,11 +14,11 @@ export const siteConfig = {
   skills: ["Javascript", "React", "Node.js", "Python", "AWS", "Docker"],
   projects: [
     {
-      name: "AI Dev Roundup Newsletter",
+      name: "U-Net Semantic Segmentation of Burn Scars",
       description:
-        "One concise email. Five minutes. Every Tuesday. Essential AI news & trends, production-ready libraries, powerful AI tools, and real-world code examples",
-      link: "https://aidevroundup.com/?ref=devportfolio",
-      skills: ["React", "Node.js", "AWS"],
+        "U-Net convolutional neural network for semantic segmentation of burn scars from satellite imagery",
+      link: "U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
+      skills: ["Machine Learning", "Python", "Remote Sensing"],
     },
     {
       name: "Chrome Extension Mastery: Build Full-Stack Extensions with React & Node.js",
