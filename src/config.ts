@@ -31,7 +31,7 @@ export const siteConfig = {
       name: "U-Net Semantic Segmentation of Burn Scars",
       description:
         "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
-      link: "https://github.com/arikwaldinger/portfolio/blob/main/U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
+      link: "/portfolio/projects/burn-scar-segmentation",
       skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
     },
    {
