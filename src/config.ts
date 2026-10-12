@@ -45,7 +45,7 @@ export const siteConfig = {
       name: "Driftless Area Land Conservancy Master Plan",
       description:
         "Architected a multi-criteria spatial decision framework (Restoration Priority Index & Protection Priority Index) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
-      link: "https://github.com/arikwaldinger",
+      link: "/portfolio/projects/dalc-master-plan",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
     {
