@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Arik Waldinger",
   title: "Geospatial Specialist | M.S. Environmental Observation & Informatics",
-  description: "Portfolio of Arik Waldinger — Spatial Data Specialist, Remote Sensing Analyst, and Conservation Operator.",
+  description: "Portfolio of Arik Waldinger — Spatial Data Specialist, Remote Sensing Analyst, and Natural Resource Operator.",
   accentColor: "#1b4332",
 
   social: {
@@ -11,7 +11,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Spatial data specialist and natural resource practitioner holding an M.S. in Environmental Observation & Informatics from UW-Madison. Proven expertise in Google Earth Engine (GEE), spatial machine learning (Random Forest, PyTorch U-Net), multi-sensor remote sensing fusion (Sentinel-1/2, Landsat, LiDAR), and Esri GIS architectures. Demonstrated track record scaling statewide land cover classifications across 1.4 billion pixels, developing spatial decision-support tools, and leading complex on-the-ground land stewardship across Midwest ecosystems.",
+    "Spatial data specialist, remote sensing analyst, and natural resource manager holding an M.S. in Environmental Observation & Informatics from UW-Madison. Brings over 5 years of operational experience across Midwestern ecosystems, bridging high-performance spatial computational tools—Google Earth Engine (GEE), PyTorch deep learning, and Esri enterprise GIS—with on-the-ground prescribed fire execution, ecological restoration, and land stewardship management.",
 
   skills: [
     "Google Earth Engine (GEE)",
@@ -21,35 +21,37 @@ export const siteConfig = {
     "Remote Sensing & LiDAR Processing",
     "QGIS & Avenza Maps",
     "Random Forest & U-Net CNNs",
-    "NWCG Wildland Fire (S-130/190)",
+    "NWCG Wildland Fire (S-130/190/211/219/290)",
+    "Spatial Database Management",
+    "Ecological Field Methods & Botany",
   ],
 
   projects: [
     {
       name: "U-Net Semantic Segmentation of Burn Scars",
       description:
-        "Implemented a PyTorch U-Net convolutional neural network with ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery for automated burn scar segmentation and damage severity mapping.",
+        "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
       link: "https://github.com/arikwaldinger/portfolio/blob/main/U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
-      skills: ["PyTorch", "Python", "Deep Learning", "Remote Sensing"],
+      skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
     },
     {
       name: "WISCLAND 2.0 High-Resolution Update",
       description:
-        "Scaled Wisconsin's land cover classification from 30m to 10m in GEE across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest architecture achieving 88%–93% species-level precision.",
+        "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
       link: "https://github.com/arikwaldinger",
-      skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Sentinel-1/2"],
+      skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Multi-Sensor Fusion"],
     },
     {
       name: "Driftless Area Land Conservancy Master Plan",
       description:
-        "Architected a multi-criteria spatial decision framework (Restoration Priority Index & Protection Priority Index) in ArcGIS Pro to prioritize capital allocation and land protection across a 245-acre preserve.",
+        "Architected a multi-criteria spatial decision framework (Restoration Priority Index & Protection Priority Index) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
       link: "https://github.com/arikwaldinger",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
     {
       name: "Full-Cycle Fire Intelligence & Soil Risk Model",
       description:
-        "Engineered a GEE workflow fusing Sentinel-2, SRTM DEMs, and SSURGO soil data with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
+        "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
       link: "https://github.com/arikwaldinger",
       skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
@@ -59,31 +61,40 @@ export const siteConfig = {
     {
       company: "Wisconsin Department of Natural Resources (DNR)",
       title: "Conservation Biologist / Advanced Wildlife Technician",
-      dateRange: "Sept 2024 - Present",
+      dateRange: "Sept 2024 - Jun 2025",
       bullets: [
-        "Conducted habitat restoration and ecological management on Wisconsin’s State Natural Areas (SNAs), focusing on the conservation of rare and endangered species.",
-        "Performed vegetation surveys and habitat assessments for rare, threatened, and endangered species, contributing to the Natural Heritage Inventory database.",
-        "Assisted in prescribed fire operations, including firebreak construction, ignition, mop-up, and overnight monitoring.",
+        "Executed habitat restoration and ecological management on State Natural Areas (SNAs) across Southern Wisconsin, targeting rare and endangered species protection.",
+        "Conducted vegetation surveys and habitat assessments for rare, threatened, and endangered species, contributing structured records to the Natural Heritage Inventory database.",
+        "Served on prescribed fire crews in wildland ignition, firebreak construction, holding, mop-up, and overnight monitoring operations.",
       ],
     },
     {
       company: "Morchella LLC",
-      title: "Field Operations & Lead Restoration Technician",
-      dateRange: "Mar 2023 - Sept 2025",
+      title: "Lead Restoration Technician & Field Operations",
+      dateRange: "Mar 2023 - Sept 2024",
       bullets: [
-        "Created GIS maps using QGIS and Avenza Maps to visualize project sites, track key features, and share progress with stakeholders.",
-        "Partnered with private landowners, government agencies, and non-profit organizations to plan and implement ecological restoration projects across diverse landscapes.",
-        "Led field crews in land management activities, ensuring projects were executed efficiently and met ecological objectives.",
+        "Created custom GIS mapping products using QGIS and Avenza Maps for site visualization, project tracking, and stakeholder reporting.",
+        "Partnered with private landowners, non-profit organizations, and government agencies to design and execute land stewardship plans across diverse Midwestern landscapes.",
+        "Supervised field teams in timber stand improvement, invasive species eradication, and ecological restoration execution.",
       ],
     },
     {
       company: "Mississippi Valley Conservancy",
       title: "Land Management Technician (Crew Leader)",
-      dateRange: "Feb 2023 - Aug 2023",
+      dateRange: "Dec 2021 - Mar 2022, Feb 2023 - Aug 2023",
       bullets: [
-        "Implemented habitat restoration projects across 5,000+ acres of nature preserves, focusing on timber stand improvement, prescribed burning, invasive species control, and brush removal.",
-        "Utilized GIS software (ArcGIS & Avenza Maps) to track project progress, survey rare species, and map restoration sites, ensuring data-driven decision-making.",
-        "Led a seasonal intern crew in land management activities, providing hands-on training in chainsaw operation, herbicide application, and restoration techniques.",
+        "Managed ecological stewardship across 5,000+ acres of nature preserves in the Driftless Area, conducting prescribed burning, timber stand improvement, and invasive plant management.",
+        "Utilized ArcGIS Pro and Avenza Maps to map restoration zones, record rare species occurrences, and evaluate project impact.",
+        "Led and mentored seasonal crew members in chainsaw operations, herbicide application, safety compliance, and field restoration protocols.",
+      ],
+    },
+    {
+      company: "Center for Environmental Management of Military Lands (CEMML)",
+      title: "Lead Fisheries Technician (Fort McCoy)",
+      dateRange: "May 2021 - Aug 2021, Mar 2022-Aug 2022",
+      bullets: [
+        "Managed aquatic resource and fisheries databases to fulfill military installation environmental compliance and natural resource management standards.",
+        "Directed crew execution of stream habitat surveys, water quality monitoring, electrofishing, and public angler surveys.",
       ],
     },
   ],
@@ -92,9 +103,10 @@ export const siteConfig = {
     {
       school: "University of Wisconsin–Madison",
       degree: "Master of Science in Environmental Conservation: Environmental Observation and Informatics",
-      dateRange: "2025 - 2026",
+      dateRange: "2024 - 2026",
       achievements: [
-        "Specialization in spatial data science, satellite image processing, computer vision, and conservation GIS.",
+        "Specialized in spatial data science, satellite remote sensing, machine learning, and conservation GIS.",
+        "Featured project work: High-resolution land cover scaling and deep learning burn scar segmentation.",
       ],
     },
     {
@@ -102,7 +114,7 @@ export const siteConfig = {
       degree: "Bachelor of Science in Biology (Minor: Environmental Studies)",
       dateRange: "2016 - 2020",
       achievements: [
-        "Focus on ecological field methods, botany, natural resource management, and environmental science.",
+        "Emphasis on botany, natural resource management, ecological field methods, and conservation biology.",
       ],
     },
   ],
