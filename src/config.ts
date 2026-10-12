@@ -52,7 +52,7 @@ export const siteConfig = {
       name: "Full-Cycle Fire Intelligence & Soil Risk Model",
       description:
         "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
-      link: "https://github.com/arikwaldinger",
+      link: "/portfolio/projects/fire-intelligence",
       skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
   ],
