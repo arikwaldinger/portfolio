@@ -1,0 +1,67 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import { siteConfig } from '../../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Intelligence & Soil Risk Model | {siteConfig.name}</title>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+    <Header />
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
+        ← Back to Portfolio
+      </a>
+
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Full-Cycle Fire Intelligence & Soil Stability Risk Model
+      </h1>
+
+      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+        Engineered an end-to-end cloud spatial pipeline in Google Earth Engine (GEE) fusing Sentinel-2 multispectral imagery, terrain DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn severity and model post-fire soil erosion risk.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Technical Stack</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• <strong>Platform:</strong> Google Earth Engine (GEE JavaScript API)</li>
+            <li>• <strong>Satellite Data:</strong> Sentinel-2 MSI (NIR/SWIR dNBR calculation)</li>
+            <li>• <strong>Elevation & Soil:</strong> SRTM Elevation DEMs, USDA SSURGO Soil Erodibility (K-Factor)</li>
+            <li>• <strong>Analytics:</strong> Multi-sensor spectral fusion and spatial logic trees</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Key Analytical Features</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• Pre- and post-fire spectral difference (dNBR) burn severity mapping</li>
+            <li>• Terrain slope & overland flow velocity modeling from SRTM DEMs</li>
+            <li>• Post-fire soil erosion risk matrix highlighting vulnerable watersheds</li>
+            <li>• Fire intelligence mapping supporting post-burn ecological monitoring</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="my-8">
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        >
+          View GEE Repository
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
