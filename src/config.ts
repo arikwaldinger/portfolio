@@ -34,11 +34,11 @@ export const siteConfig = {
       link: "https://github.com/arikwaldinger/portfolio/blob/main/U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
       skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
     },
-    {
+   {
       name: "WISCLAND 2.0 High-Resolution Update",
       description:
         "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
-      link: "https://github.com/arikwaldinger",
+      link: "/portfolio/projects/wiscland",
       skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Multi-Sensor Fusion"],
     },
     {
