@@ -1,0 +1,67 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import { siteConfig } from '../../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DALC Master Plan | {siteConfig.name}</title>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+    <Header />
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
+        ← Back to Portfolio
+      </a>
+
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Driftless Area Land Conservancy Master Plan
+      </h1>
+
+      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+        Architected a multi-criteria spatial decision framework using ArcGIS Pro and high-resolution LiDAR data to target capital allocation, ecological restoration, and land protection strategies across a <strong class="text-emerald-400">245-acre nature preserve</strong> in Southwestern Wisconsin's Driftless Area.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Technical Stack & Methods</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• <strong>GIS Architecture:</strong> ArcGIS Pro, AGOL, QGIS</li>
+            <li>• <strong>Data Datasets:</strong> USGS LiDAR DEMs, 1m Canopy Models, SSURGO Soil Series</li>
+            <li>• <strong>Spatial Framework:</strong> Multi-Criteria Evaluation (MCE) Modeling</li>
+            <li>• <strong>Core Indices:</strong> Restoration Priority Index (RPI) & Protection Priority Index (PPI)</li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Core Deliverables</h3>
+          <ul class="space-y-2 text-gray-300">
+            <li>• MCE spatial model targeting invasive removal and oak savanna restoration</li>
+            <li>• Flow accumulation and slope steepness erosion risk mapping</li>
+            <li>• Comprehensive Property Management Plan with cartographic maps</li>
+            <li>• Executive priority matrix presented to conservancy leadership</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="my-8">
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        >
+          View Spatial Project Repository
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
