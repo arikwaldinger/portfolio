@@ -1,0 +1,54 @@
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import { siteConfig } from '../../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deep Learning Burn Scar Segmentation | {siteConfig.name}</title>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+    <Header />
+
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
+        ← Back to Portfolio
+      </a>
+
+      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+        Deep Learning Burn Scar Semantic Segmentation
+      </h1>
+
+      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
+        Implemented a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery for automated burn scar segmentation and damage severity mapping.
+      </p>
+
+      <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-8">
+        <h3 class="text-xl font-semibold mb-3 text-emerald-400">Model & Architecture Highlights</h3>
+        <ul class="space-y-2 text-gray-300">
+          <li>• <strong>Architecture:</strong> U-Net CNN with ResNet50 Backbone</li>
+          <li>• <strong>Framework:</strong> PyTorch & Torchvision</li>
+          <li>• <strong>Data Source:</strong> Sentinel-2 Multispectral Imagery (NIR / SWIR bands)</li>
+          <li>• <strong>Optimization:</strong> Mixed-precision training with BCE + Dice Loss</li>
+        </ul>
+      </div>
+
+      <div class="my-8">
+        <a 
+          href="https://github.com/arikwaldinger/portfolio/blob/main/U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb" 
+          target="_blank" 
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+        >
+          View Jupyter Notebook
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
