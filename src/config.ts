@@ -2,7 +2,7 @@ export const siteConfig = {
   name: "Arik Waldinger",
   title: "Geospatial Specialist | M.S. Environmental Observation & Informatics",
   description: "Portfolio of Arik Waldinger — Spatial Data Specialist, Remote Sensing Analyst, and Conservation Operator.",
-  accentColor: "#1b4332", // Forest Green theme
+  accentColor: "#1b4332",
 
   social: {
     email: "awaldinger9@gmail.com",
@@ -29,7 +29,7 @@ export const siteConfig = {
       name: "U-Net Semantic Segmentation of Burn Scars",
       description:
         "Implemented a PyTorch U-Net convolutional neural network with ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery for automated burn scar segmentation and damage severity mapping.",
-      link: "U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
+      link: "https://github.com/arikwaldinger/portfolio/blob/main/U_Net_Semantic_Segmentation_of_Burn_Scars.ipynb",
       skills: ["PyTorch", "Python", "Deep Learning", "Remote Sensing"],
     },
     {
@@ -100,4 +100,12 @@ export const siteConfig = {
     {
       school: "University of Wisconsin–La Crosse",
       degree: "Bachelor of Science in Biology (Minor: Environmental Studies)",
-      date
+      dateRange: "2016 - 2020",
+      achievements: [
+        "Focus on ecological field methods, botany, natural resource management, and environmental science.",
+      ],
+    },
+  ],
+};
+
+export const config = siteConfig;
