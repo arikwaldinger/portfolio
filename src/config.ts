@@ -44,7 +44,7 @@ export const siteConfig = {
     {
       name: "Driftless Area Land Conservancy Master Plan",
       description:
-        "Architected a multi-criteria spatial decision framework (Restoration & Protection Priority Indices) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
+        "Engineered a systematic 110-point mobile GIS sampling grid in ArcGIS Pro and Field Maps to execute a baseline ecological inventory and 3-tiered operational stewardship plan across a 245-acre preserve.",
       link: "/portfolio/projects/dalc-master-plan",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
