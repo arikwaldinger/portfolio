@@ -83,7 +83,7 @@ export const siteConfig = {
       company: "Wisconsin Department of Natural Resources",
       logo: "/portfolio/logos/WI-DNR.png",
       title: "Conservation Biologist / Advanced Wildlife Technician",
-      dateRange: "Sept 2024 - Present",
+      dateRange: "Sept 2024 - Jun 2025",
       bullets: [
         "Executed habitat restoration and ecological management on State Natural Areas (SNAs) across Southern Wisconsin, targeting rare and endangered species protection.",
         "Conducted vegetation surveys and habitat assessments for rare, threatened, and endangered species, contributing structured records to the Natural Heritage Inventory database.",
@@ -91,7 +91,7 @@ export const siteConfig = {
       ],
     },
     {
-      company: "Morchella LLC",
+      company: "Morchella LLC.",
       logo: "/portfolio/logos/Morchella.jpg",
       title: "Field Operations Manager",
       dateRange: "Mar 2023 - Sept 2025",
@@ -105,7 +105,7 @@ export const siteConfig = {
       company: "Mississippi Valley Conservancy",
       logo: "/portfolio/logos/MVC.png",
       title: "Land Management Technician (Crew Leader)",
-      dateRange: "Feb 2023 - Aug 2023",
+      dateRange: "Feb 2023 - Aug 2023, Dec 2021 - Mar 2022",
       bullets: [
         "Managed ecological stewardship across 5,000+ acres of nature preserves in the Driftless Area, conducting prescribed burning, timber stand improvement, and invasive plant management.",
         "Utilized ArcGIS Pro and Avenza Maps to map restoration zones, record rare species occurrences, and evaluate project impact.",
@@ -116,7 +116,7 @@ export const siteConfig = {
       company: "Center for Environmental Management of Military Lands (CEMML)",
       logo: "/portfolio/logos/CEMML.png",
       title: "Lead Fisheries Technician (Fort McCoy)",
-      dateRange: "May 2021 - Aug 2022",
+      dateRange: "Mar 2022 - Nov 2022, May 2021 - Aug 2021",
       bullets: [
         "Managed aquatic resource and fisheries databases to fulfill military installation environmental compliance and natural resource management standards.",
         "Directed crew execution of stream habitat surveys, water quality monitoring, electrofishing, and public angler surveys.",
