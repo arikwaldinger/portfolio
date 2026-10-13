@@ -28,7 +28,7 @@ export const siteConfig = {
 
   projects: [
     {
-      name: "WISCLAND 2.0 High-Resolution Update",
+      name: "WISCLAND 2.0: Statewide 10m Forest Species Mapping",
       description:
         "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
       link: "/portfolio/projects/wiscland",
