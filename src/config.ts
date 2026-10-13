@@ -57,10 +57,10 @@ export const siteConfig = {
     },
   ],
 
-  experience: [
+ experience: [
     {
       company: "Private Estate",
-      logo: "/portfolio/logos/private.png",
+      logo: "/portfolio/logos/private.png", // Ensure private.png is uploaded to public/logos/
       title: "Private Land Stewardship Consultant",
       dateRange: "May 2026 - Sept 2026",
       bullets: [
@@ -71,7 +71,7 @@ export const siteConfig = {
     },
     {
       company: "Wisconsin Department of Natural Resources (DNR)",
-      logo: "public/logos/WI-DNR.png",
+      logo: "/portfolio/logos/WI-DNR.png",
       title: "Fire Rider LTE",
       dateRange: "Feb 2026 - May 2026",
       bullets: [
@@ -82,7 +82,7 @@ export const siteConfig = {
     },
     {
       company: "Wisconsin Department of Natural Resources (DNR)",
-      logo: "/portfolio/logos/wdnr.png",
+      logo: "/portfolio/logos/WI-DNR.png",
       title: "Conservation Biologist / Advanced Wildlife Technician",
       dateRange: "Sept 2024 - Present",
       bullets: [
@@ -93,7 +93,7 @@ export const siteConfig = {
     },
     {
       company: "Morchella LLC",
-      logo: "/portfolio/logos/morchella.png",
+      logo: "/portfolio/logos/Morchella.jpg",
       title: "Lead Restoration Technician & Field Operations",
       dateRange: "Mar 2023 - Sept 2025",
       bullets: [
@@ -104,7 +104,7 @@ export const siteConfig = {
     },
     {
       company: "Mississippi Valley Conservancy",
-      logo: "/portfolio/logos/mvc.png",
+      logo: "/portfolio/logos/MVC.png",
       title: "Land Management Technician (Crew Leader)",
       dateRange: "Feb 2023 - Aug 2023",
       bullets: [
@@ -115,7 +115,7 @@ export const siteConfig = {
     },
     {
       company: "Center for Environmental Management of Military Lands (CEMML)",
-      logo: "/portfolio/logos/cemml.png",
+      logo: "/portfolio/logos/CEMML.png",
       title: "Lead Fisheries Technician (Fort McCoy)",
       dateRange: "May 2021 - Aug 2022",
       bullets: [
