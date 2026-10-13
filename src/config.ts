@@ -60,7 +60,6 @@ export const siteConfig = {
  experience: [
     {
       company: "Private Estate",
-      logo: "/portfolio/logos/private.png", // Ensure private.png is uploaded to public/logos/
       title: "Private Land Stewardship Consultant",
       dateRange: "May 2026 - Sept 2026",
       bullets: [
