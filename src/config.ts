@@ -70,6 +70,7 @@ export const siteConfig = {
     },
        {
       company: "Wisconsin Department of Natural Resources (DNR)",
+         logo: "/portfolio/public/WI-DNR.png"
       title: "Fire Rider LTE",
       dateRange: "Feb 2026 - May 2026",
       bullets: [
