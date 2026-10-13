@@ -16,51 +16,264 @@ import { siteConfig } from '../../config';
     <Header />
 
     <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <!-- Navigation Back Link -->
       <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
         ← Back to Portfolio
       </a>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
+      <!-- Page Title & Overview -->
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
         Deep Learning Burn Scar Semantic Segmentation
       </h1>
 
-      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-        Implemented a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery for automated burn scar segmentation and damage severity mapping.
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Evaluating encoder backbones and data augmentation strategies in PyTorch U-Net architectures for bi-temporal Sentinel-2 satellite imagery to automate high-resolution burn scar mapping.
       </p>
 
-<!-- burn-scar-segmentation Image Graphic -->
-<div class="my-8">
-  <img 
-    src="/portfolio/BurnSegmentation.png" 
-    alt="Comparative Analysis of Encoder Backbones for Burn Scar Segmentation" 
-    class="w-full h-auto rounded-lg border border-gray-700 shadow-lg"
-  />
-  <p class="text-sm text-gray-400 text-center mt-2">
-    Figure 1: Comparative Analysis of Encoder Backbones for burn scar segmentation.
-  </p>
-</div>
-
-      <div class="bg-gray-800 p-6 rounded-lg border border-gray-700 mb-8">
-        <h3 class="text-xl font-semibold mb-3 text-emerald-400">Model & Architecture Highlights</h3>
-        <ul class="space-y-2 text-gray-300">
-          <li>• <strong>Architecture:</strong> U-Net CNN with ResNet50 Backbone</li>
-          <li>• <strong>Framework:</strong> PyTorch & Torchvision</li>
-          <li>• <strong>Data Source:</strong> Sentinel-2 Multispectral Imagery (NIR / SWIR bands)</li>
-          <li>• <strong>Optimization:</strong> Mixed-precision training with BCE + Dice Loss</li>
-        </ul>
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a 
+          href="https://colab.research.google.com/drive/1-5YYkiePO7nM63A8NQ1MNigKVcbAoy8-?usp=sharing" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
+        >
+          Open in Google Colab
+        </a>
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 font-semibold px-6 py-3 rounded-lg transition-colors"
+        >
+          View GitHub Profile
+        </a>
       </div>
 
-      <div class="my-8">
-  <a 
-    href="https://colab.research.google.com/drive/1-5YYkiePO7nM63A8NQ1MNigKVcbAoy8-?usp=sharing" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
-  >
-    Open in Google Colab
-  </a>
-</div>
+      <!-- Main Visual Graphic -->
+      <div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
+        <img 
+          src="/portfolio/BurnSegmentation.png" 
+          alt="Comparative Analysis of Encoder Backbones for Burn Scar Segmentation" 
+          class="w-full h-auto rounded-md border border-gray-700"
+        />
+        <p class="text-sm text-gray-400 text-center mt-3">
+          Figure 1: Comparative analysis of U-Net encoder backbones evaluated across bi-temporal Sentinel-2 imagery.
+        </p>
+      </div>
+
+      <!-- Section 1: Executive Summary & Problem Statement -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          1. Executive Summary & Problem Statement
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Wildland fire activity—both unplanned wildfires and controlled prescribed burns—requires rapid, high-resolution spatial intelligence. For unplanned wildfires, immediate perimeter extraction is crucial for Burned Area Emergency Response (BAER), economic loss estimation, secondary hazard mitigation (e.g., debris flows and post-fire soil erosion), and targeting invasive species monitoring. For prescribed fires, precise post-burn mapping allows land managers to evaluate fuel reduction efficacy, quantify burn severity, verify mosaic refugia, and adapt future burn plans.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Traditional spectral index thresholding (e.g., dNBR) often struggles with cloud shadows, water bodies, and complex land cover heterogeneities. This project evaluates deep convolutional neural networks (CNNs)—specifically the <strong>U-Net</strong> semantic segmentation architecture—to automate pixel-level burn scar classification using multispectral Sentinel-2 imagery.
+        </p>
+
+        <!-- Callout Box: Research Question -->
+        <div class="bg-gray-800 border-l-4 border-emerald-500 p-5 rounded-r-lg my-6">
+          <h3 class="text-lg font-semibold text-white mb-1">Core Research Question</h3>
+          <p class="text-gray-300 italic">
+            "What is the optimal combination of backbone encoder architecture and data augmentation strategy for a U-Net model to accurately segment burn scars from Sentinel-2 multispectral imagery?"
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 2: Dataset & Geospatial Data Pipeline -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          2. Dataset & Geospatial Data Pipeline
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          The model was trained and evaluated on the <strong>ChaBuD (Change Detection for Burn Scar Detection)</strong> dataset using <code class="text-emerald-300 bg-gray-800 px-1.5 py-0.5 rounded">TorchGeo</code>, a specialized PyTorch library for Earth observation data.
+        </p>
+        <ul class="list-disc list-inside space-y-2 text-gray-300 mb-6">
+          <li><strong>Image Pair Structure:</strong> 356 bi-temporal Sentinel-2 image pairs (Pre-fire and Post-fire) with aligned binary ground-truth masks.</li>
+          <li><strong>Spatial Dimensions:</strong> 512 × 512 pixels at <strong>10-meter resolution</strong> per pixel (~26 km² per tile).</li>
+          <li><strong>Spectral Resolution:</strong> 12 multispectral bands per date, concatenated into a <strong>24-channel input tensor</strong> (2 dates × 12 bands).</li>
+        </ul>
+
+        <!-- Table: Sentinel-2 Bands -->
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Band</th>
+                <th class="p-3 border-b border-gray-700">Band Name</th>
+                <th class="p-3 border-b border-gray-700">Resolution</th>
+                <th class="p-3 border-b border-gray-700">Primary Application / Spectral Role</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr><td class="p-3 font-mono text-emerald-300">B01</td><td class="p-3">Coastal Aerosol</td><td class="p-3">60m</td><td class="p-3">Atmospheric correction & coastal studies</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B02</td><td class="p-3">Blue</td><td class="p-3">10m</td><td class="p-3">Soil/vegetation discrimination</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B03</td><td class="p-3">Green</td><td class="p-3">10m</td><td class="p-3">Green vegetation peak reflectance</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B04</td><td class="p-3">Red</td><td class="p-3">10m</td><td class="p-3">Chlorophyll absorption</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B05–B07</td><td class="p-3">Vegetation Red Edge</td><td class="p-3">20m</td><td class="p-3">Vegetation health & canopy structure</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B08</td><td class="p-3">Near-Infrared (NIR)</td><td class="p-3">10m</td><td class="p-3">Biomass signal (drops sharply post-burn)</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B8A</td><td class="p-3">Narrow NIR</td><td class="p-3">20m</td><td class="p-3">Refined vegetation indices</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B09</td><td class="p-3">Water Vapour</td><td class="p-3">60m</td><td class="p-3">Atmospheric correction</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B11</td><td class="p-3">SWIR 1</td><td class="p-3">20m</td><td class="p-3">Soil moisture & burn response (spikes post-burn)</td></tr>
+              <tr><td class="p-3 font-mono text-emerald-300">B12</td><td class="p-3">SWIR 2</td><td class="p-3">20m</td><td class="p-3">Ash, char & moisture discrimination</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Model Architecture & Training Framework -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          3. Model Architecture & Training Parameters
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-white mb-3">Model Configuration</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>• <strong>Framework:</strong> PyTorch & <code class="text-emerald-300">segmentation_models_pytorch</code></li>
+              <li>• <strong>Architecture:</strong> U-Net (Encoder-Decoder with Skip Connections)</li>
+              <li>• <strong>Input Shape:</strong> [Batch Size, 24 Channels, 512, 512]</li>
+              <li>• <strong>Pre-trained Weights:</strong> ImageNet</li>
+              <li>• <strong>Decoder Channels:</strong> (256, 128, 64, 32, 16)</li>
+            </ul>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-white mb-3">Training Hyperparameters</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>• <strong>Epochs & Batch Size:</strong> 50 Epochs | Batch Size: 4</li>
+              <li>• <strong>Optimizer:</strong> Adam (lr = 0.0002, weight decay = 0.01)</li>
+              <li>• <strong>Scheduler:</strong> StepLR (Step Size = 10, Gamma = 0.1)</li>
+              <li>• <strong>Loss Function:</strong> DiceLoss (Multiclass Mode)</li>
+              <li>• <strong>Acceleration:</strong> Automatic Mixed Precision (AMP) via CUDA</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Backbone Comparison & Results -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          4. Experimental Results & Performance Benchmarks
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Four candidate backbone architectures were benchmarked across the validation dataset ($N=78$ tiles) using Intersection over Union (IoU / Jaccard Index), Dice Score (F1-score), Precision, and Recall:
+        </p>
+
+        <!-- Table: Experimental Benchmark Results -->
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Encoder Backbone</th>
+                <th class="p-3 border-b border-gray-700">Parameters</th>
+                <th class="p-3 border-b border-gray-700">Val Loss</th>
+                <th class="p-3 border-b border-gray-700">Val Accuracy</th>
+                <th class="p-3 border-b border-gray-700">Burned IoU</th>
+                <th class="p-3 border-b border-gray-700">Burned Dice</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr>
+                <td class="p-3 font-semibold text-white">ResNet-18</td>
+                <td class="p-3 font-mono">~11.7 M</td>
+                <td class="p-3 font-mono">0.241</td>
+                <td class="p-3 font-mono">0.875</td>
+                <td class="p-3 font-mono">0.912</td>
+                <td class="p-3 font-mono">0.948</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">EfficientNet-B0</td>
+                <td class="p-3 font-mono">~11.7 M</td>
+                <td class="p-3 font-mono">0.258</td>
+                <td class="p-3 font-mono">0.861</td>
+                <td class="p-3 font-mono">0.895</td>
+                <td class="p-3 font-mono">0.938</td>
+              </tr>
+              <tr class="bg-emerald-950/40 border-l-4 border-emerald-500">
+                <td class="p-3 font-bold text-emerald-300">ResNet-50 (Best)</td>
+                <td class="p-3 font-mono font-bold text-emerald-300">~25.6 M</td>
+                <td class="p-3 font-mono font-bold text-emerald-300">0.223</td>
+                <td class="p-3 font-mono font-bold text-emerald-300">0.889</td>
+                <td class="p-3 font-mono font-bold text-emerald-300">0.935</td>
+                <td class="p-3 font-mono font-bold text-emerald-300">0.966</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">SE-ResNeXt50</td>
+                <td class="p-3 font-mono">~27.0 M</td>
+                <td class="p-3 font-mono">0.312</td>
+                <td class="p-3 font-mono">0.824</td>
+                <td class="p-3 font-mono">0.842</td>
+                <td class="p-3 font-mono">0.908</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Analytical Findings -->
+        <div class="space-y-4 text-gray-300">
+          <h3 class="text-xl font-semibold text-white mb-2">Key Insights</h3>
+          <p class="leading-relaxed">
+            • <strong>ResNet-50 Superiority:</strong> ResNet-50 achieved the top performance (<strong>Burned IoU: 0.935, Dice: 0.966</strong>). Its residual skip architecture captured subtle contextual changes across multispectral channels—specifically the post-burn NIR drop paired with a SWIR spike—without over-parameterizing the representation.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Attention Mechanism Overfitting:</strong> The SE-ResNeXt50 backbone exhibited overfitting (Val Loss: 0.312). Squeeze-and-Excitation attention blocks created excessive capacity for the 278-sample dataset, causing the network to memorize spatial artifacts rather than generalized spectral change features.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Augmentation Dynamics:</strong> Standard optical color jitter distorted inter-band ratio relationships between visible RGB and non-jittered SWIR/NIR bands, highlighting that remote sensing augmentation must respect physical spectral consistency.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5: Practical Applications & Next Steps -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          5. Practical Applications & Technical Roadmap
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Wildfire Response (BAER)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Automates 10-meter resolution perimeter extraction within minutes of a Sentinel-2 overpass to inform emergency post-fire stabilization, soil erosion modeling, and hazard mitigation.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Prescribed Burn Intelligence</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Provides objective metrics for burn severity and completeness. Isolating unburned islands within burn units enables fire ecologists to quantify mosaic habitat refugia.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/60 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-3">Future Technical Roadmap</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>• <strong>Siamese U-Net Architecture:</strong> Implement dual-branch encoders to process pre- and post-fire imagery in parallel before feature fusion.</li>
+            <li>• <strong>Domain-Specific Augmentations:</strong> Test CutMix and synthetic cloud/shadow masking in place of optical color transformations.</li>
+            <li>• <strong>Explicit Spectral Indices:</strong> Pass pre-calculated dNBR, NBR, and NDVI channels directly into early network layers.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bottom Call-To-Action -->
+      <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-3">Explore the Complete Code & Workflows</h3>
+        <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
+          View the complete Python code, PyTorch dataset loaders, model training loops, and interactive visualization outputs directly in Google Colab.
+        </p>
+        <a 
+          href="https://colab.research.google.com/drive/1-5YYkiePO7nM63A8NQ1MNigKVcbAoy8-?usp=sharing" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+        >
+          Open Google Colab Notebook
+        </a>
+      </div>
     </main>
+
     <Footer />
   </body>
 </html>
