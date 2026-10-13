@@ -10,65 +10,268 @@ import { siteConfig } from '../../config';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WISCLAND 2.0 | {siteConfig.name}</title>
+    <title>High-Resolution Forest Species Mapping | {siteConfig.name}</title>
   </head>
   <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
     <Header />
 
     <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <!-- Navigation Back Link -->
       <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
         ← Back to Portfolio
       </a>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-        WISCLAND 2.0 High-Resolution Land Cover Update
+      <!-- Page Title & Subtitle -->
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+        High-Resolution Forest Species Mapping Across Wisconsin
       </h1>
-
-      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-        Scaled Wisconsin’s statewide land cover classification from 30m (Landsat) to 10m (Sentinel-2) spatial resolution across <strong class="text-emerald-400">1.4 billion pixels (35 million acres)</strong>. Developed within Google Earth Engine (GEE), this project processed over <strong class="text-emerald-400">218 GB</strong> of multi-sensor satellite imagery.
+      <p class="text-xl text-emerald-400 font-semibold mb-2">
+        Scaling WISCLAND 2.0 via Nested Earth Engine Classifiers
       </p>
 
-<!-- WISCLAND II Forest Update Image Graphic -->
-<div class="my-8">
-  <img 
-    src="/portfolio/WISCLANDII_ForestUpdate.png" 
-    alt="WISCLAND II High-Resolution Forest Update Map" 
-    class="w-full h-auto rounded-lg border border-gray-700 shadow-lg"
-  />
-  <p class="text-sm text-gray-400 text-center mt-2">
-    Figure 1: WISCLAND II high-resolution forest type and species classification map.
-  </p>
-</div>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Scaled Wisconsin’s statewide forest classification from 30m to <strong class="text-emerald-400">10m spatial resolution</strong> across <strong class="text-emerald-400">1.4 billion pixels (35 million acres)</strong>. Developed in Google Earth Engine (GEE) in collaboration with the Wisconsin DNR, processing over 218 GB of multi-sensor satellite data.
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Technical Stack</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• <strong>Platform:</strong> Google Earth Engine (GEE JS API)</li>
-            <li>• <strong>Satellites:</strong> Sentinel-2 MSI, Sentinel-1 C-Band SAR</li>
-            <li>• <strong>Model:</strong> 5-Tier Hierarchical Random Forest</li>
-            <li>• <strong>Accuracy:</strong> 88%–93% species-level precision</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Core Deliverables</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• Statewide 10m Land Cover Raster Map</li>
-            <li>• Multi-sensor optical/SAR fusion workflow</li>
-            <li>• Confusion matrices across 10,000+ reference points</li>
-            <li>• Species-level forest and wetland classification</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="my-8">
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-10">
         <a 
           href="https://github.com/arikwaldinger" 
           target="_blank" 
-          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
         >
           View GEE Repository
+        </a>
+      </div>
+
+      <!-- Main Visual Map Graphic -->
+      <div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
+        <img 
+          src="/portfolio/WISCLANDII_ForestUpdate.png" 
+          alt="WISCLAND II High-Resolution Forest Update Map" 
+          class="w-full h-auto rounded-md border border-gray-700"
+        />
+        <p class="text-sm text-gray-400 text-center mt-3">
+          Figure 1: High-definition 10-meter forest type and species alliance classification across Wisconsin ecoregions.
+        </p>
+      </div>
+
+      <!-- Section 1: Executive Summary & Context -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          1. Executive Summary & Ecological Context
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          The <strong>WISCLAND 2.0</strong> land cover map serves as Wisconsin’s authoritative spatial baseline for natural resource management, ecological restoration, and land protection. Born from a partnership between UW–Madison and the Wisconsin DNR, it provides a hierarchical structure ranging from broad land cover classes down to specific forest species (e.g., Red Maple, Tamarack, Bur Oak).
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          However, legacy 30-meter resolution models struggle to capture fine-scale habitat fragmentation, narrow riparian corridors, and rapid canopy shifts. Addressing the conservation principle that <em>we cannot manage what we have not first mapped accurately</em>, this project engineered a <strong>nested 5-tier Random Forest classifier in Google Earth Engine (GEE)</strong>. By synthesizing Sentinel-2 optical, Sentinel-1 SAR, Landsat thermal imagery, and USGS elevation models, this pipeline delivers a statewide 10-meter update reflecting Wisconsin's contemporary forest composition.
+        </p>
+
+        <!-- Quick Specs Banner -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 text-center text-sm">
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Total Scale</span>
+            <strong class="text-white text-base">35M Acres</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Pixel Volume</span>
+            <strong class="text-emerald-400 text-base">1.4 Billion</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Resolution</span>
+            <strong class="text-white text-base">10m Native</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Data Volume</span>
+            <strong class="text-emerald-400 text-base">218 GB</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Multi-Sensor Data Fusion Architecture -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          2. Multi-Sensor Data Fusion Pipeline
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Classifying individual forest species across regional climatic gradients requires going beyond mid-summer optical spectral signatures. A 3-year <strong>Master Data Cube (2023–2025)</strong> was constructed to eliminate cloud contamination and leverage multi-modal physical signals:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Spectral Core (Sentinel-2 MSI)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              10m & 20m bands emphasizing Red-Edge (B5, B6, B7) and SWIR (B11, B12) sensitive to internal leaf structure, canopy moisture, and chlorophyll density across a 7-month seasonal stack.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Structure & Texture (Sentinel-1 SAR)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              C-Band SAR (VV, VH, and VH/VV ratios) capturing canopy structural roughness, branch architecture, and needle-leaf vs. broadleaf geometry regardless of cloud cover.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Thermal Dynamics (Landsat 8/9 LST)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Land Surface Temperature (LST) identifying microclimatic cooling differences between dense evergreen conifer stands and broadleaf hardwood canopies during peak summer.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Topographic Engine (USGS 10m DEM)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Elevation, Slope, Aspect (Northness/Eastness), TPI, and CTI acting as physiographic anchors that dictate species survival based on landscape position and water accumulation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Nested 5-Tier Hierarchical Classification Architecture -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          3. Nested 5-Tier Classification Architecture
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Executing complex species-level calculations over 35 million acres requires strict computational optimization. By nesting the classification, intensive species math is executed strictly on pixels previously confirmed as forest:
+        </p>
+
+        <div class="space-y-4 mb-8">
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-base font-bold text-white">Tier 1: Water Mask (10m)</h3>
+            <p class="text-sm text-gray-300">Isolates terrestrial surfaces from water bodies using NDWI, MNDWI, NIR, and DEM elevation (200 Trees | 16,000 Training Pixels).</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-base font-bold text-white">Tier 2: Forest Canopy Mask (10m)</h3>
+            <p class="text-sm text-gray-300">Filters out agriculture, urban development, and grasslands using multi-index thresholds (NDRE, NBR, NDMI, EVI) and collective intelligence labels (150 Trees | 10,000 Training Pixels).</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-base font-bold text-white">Tier 3: Hydrology Split (Upland vs. Lowland Forest)</h3>
+            <p class="text-sm text-gray-300">Separates forests by water table interaction using 48 predictors, 7-month time series, National Wetlands Inventory (NWI), and Tasseled Cap Wetness (100 Trees | 8,000 Training Pixels).</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-base font-bold text-white">Tier 4: Structural Binary (Conifer vs. Deciduous)</h3>
+            <p class="text-sm text-gray-300">Separates needle-leaf from broadleaf structure independently in Upland and Lowland masks using Sentinel-1 SAR ratios and Landsat LST (300 Trees | 16,000 Training Pixels).</p>
+          </div>
+          <div class="bg-gray-800 p-4 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-base font-bold text-white">Tier 5: Genus & Species Alliances</h3>
+            <p class="text-sm text-gray-300">Classifies species alliances (Oak, Maple, Aspen/Birch, Pine, Spruce/Fir, Swamp Ash, Tamarack) using "Spring Greenup Velocity" and phenological time traps (300 Trees | ~4,000 Points/Class).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Benchmarks & Quantitative Results -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          4. Performance Benchmarks & Accuracy Metrics
+        </h2>
+
+        <!-- Table 1: Tier-by-Tier Overall Accuracy -->
+        <h3 class="text-lg font-semibold text-white mb-3">Statewide Tier Benchmarks</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Tier</th>
+                <th class="p-3 border-b border-gray-700">Target Classes</th>
+                <th class="p-3 border-b border-gray-700">Accuracy</th>
+                <th class="p-3 border-b border-gray-700">Kappa (&kappa;)</th>
+                <th class="p-3 border-b border-gray-700">Dominant Predictors</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr><td class="p-3 font-semibold text-white">Tier 1</td><td class="p-3">Water vs. Land</td><td class="p-3 font-mono text-emerald-300 font-bold">100.0%</td><td class="p-3 font-mono">1.00</td><td class="p-3">NDWI, B8 (NIR), NDVI, MNDWI</td></tr>
+              <tr><td class="p-3 font-semibold text-white">Tier 2</td><td class="p-3">Forest vs. Non-Forest</td><td class="p-3 font-mono text-emerald-300 font-bold">88.1%</td><td class="p-3 font-mono">0.76</td><td class="p-3">NDRE, Elevation, B4 (Red), NDMI</td></tr>
+              <tr><td class="p-3 font-semibold text-white">Tier 3</td><td class="p-3">Upland vs. Lowland Forest</td><td class="p-3 font-mono text-emerald-300 font-bold">87.0%</td><td class="p-3 font-mono">0.73</td><td class="p-3">Slope, TPI, Elevation, B8 (Apr), B11 (Apr)</td></tr>
+              <tr><td class="p-3 font-semibold text-white">Tier 4</td><td class="p-3">Upland: Deciduous / Conifer</td><td class="p-3 font-mono text-emerald-300 font-bold">81.3%</td><td class="p-3 font-mono">0.62</td><td class="p-3">Elevation, S1 Ratio (VH/VV), B12 (Apr/Nov)</td></tr>
+              <tr><td class="p-3 font-semibold text-white">Tier 4</td><td class="p-3">Lowland: Deciduous / Conifer</td><td class="p-3 font-mono text-emerald-300 font-bold">81.5%</td><td class="p-3 font-mono">0.63</td><td class="p-3">B12 (Nov), Elevation, B7/B8 (Summer), S1 Ratio</td></tr>
+              <tr class="bg-emerald-950/30"><td class="p-3 font-bold text-emerald-300">Tier 5</td><td class="p-3 font-semibold text-white">Upland Deciduous Species</td><td class="p-3 font-mono text-emerald-300 font-bold">88.0%</td><td class="p-3 font-mono">0.82</td><td class="p-3">Elevation, B12 (Oct/Mar), S1 Ratio</td></tr>
+              <tr class="bg-emerald-950/30"><td class="p-3 font-bold text-emerald-300">Tier 5</td><td class="p-3 font-semibold text-white">Upland Conifer Species</td><td class="p-3 font-mono text-emerald-300 font-bold">88.0%</td><td class="p-3 font-mono">0.82</td><td class="p-3">Elevation, S1 Ratio, S1 VV, B11 (Mar)</td></tr>
+              <tr class="bg-emerald-950/30"><td class="p-3 font-bold text-emerald-300">Tier 5</td><td class="p-3 font-semibold text-white">Lowland Deciduous Species</td><td class="p-3 font-mono text-emerald-300 font-bold">90.0%</td><td class="p-3 font-mono">0.80</td><td class="p-3">Elevation, B11/B12 (Mar), Spring Greenup Velocity</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Table 2: Class Level Precision -->
+        <h3 class="text-lg font-semibold text-white mb-3">Species Alliance Accuracies (Tier 5)</h3>
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Forest Alliance / Species</th>
+                <th class="p-3 border-b border-gray-700">Code</th>
+                <th class="p-3 border-b border-gray-700">Producer's Accuracy (Sensitivity)</th>
+                <th class="p-3 border-b border-gray-700">User's Accuracy (Precision)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr><td class="p-3 font-medium text-white">Oak Alliance</td><td class="p-3 font-mono">12</td><td class="p-3 font-mono">92.06%</td><td class="p-3 font-mono">85.80%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Red Maple / Northern Hardwoods</td><td class="p-3 font-mono">13</td><td class="p-3 font-mono">91.24%</td><td class="p-3 font-mono">86.31%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Aspen / Birch</td><td class="p-3 font-mono">14</td><td class="p-3 font-mono">88.05%</td><td class="p-3 font-mono">86.73%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Fir / Spruce Alliance</td><td class="p-3 font-mono">15</td><td class="p-3 font-mono">88.79%</td><td class="p-3 font-mono">91.61%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Pine (White / Red / Jack)</td><td class="p-3 font-mono">16</td><td class="p-3 font-mono">84.09%</td><td class="p-3 font-mono">86.15%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Hemlock Hardwood</td><td class="p-3 font-mono">17</td><td class="p-3 font-mono">88.62%</td><td class="p-3 font-mono">89.11%</td></tr>
+              <tr><td class="p-3 font-medium text-white">Bottomland Hardwoods</td><td class="p-3 font-mono">10</td><td class="p-3 font-mono">86.83%</td><td class="p-3 font-mono">92.33%</td></tr>
+              <tr class="bg-emerald-950/20"><td class="p-3 font-semibold text-emerald-300">Swamp Hardwood / Black Ash</td><td class="p-3 font-mono font-bold text-emerald-300">11</td><td class="p-3 font-mono font-bold text-emerald-300">88.38%</td><td class="p-3 font-mono font-bold text-emerald-300">93.28%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5: Analytical Insights -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          5. Ecological Insights & Key Discriminators
+        </h2>
+        <div class="space-y-4 text-gray-300">
+          <p class="leading-relaxed">
+            • <strong>Topographic Anchoring:</strong> Elevation and slope served as dominant predictors across all tiers. Micro-topography directly controls soil moisture regimes and nutrient availability in glaciated landscapes, preventing ecological misclassifications (e.g., placing lowland ash species on high-relief upland ridges).
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Phenological "Speed Traps":</strong> Calculating "Spring Greenup Velocity" (&Delta;NDVI<sub>May–April</sub>) and integrating late-autumn SWIR (B12 November) bands successfully isolated spectrally similar broadleaf species. Black Ash was accurately distinguished from Bottomland Hardwoods by catching its late spring canopy leaf-out signature.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>SAR Structural Discrimination:</strong> While mid-summer optical bands suffered from broadleaf canopy closure saturation, Sentinel-1 SAR ratio (VH/VV) provided canopy roughness signatures, cleanly separating evergreen needle structure from broadleaf foliage.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 6: Future Roadmap -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          6. Future Technical Improvements
+        </h2>
+        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+          <ul class="space-y-3 text-sm text-gray-300">
+            <li class="flex items-start">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mt-1.5 mr-3 shrink-0"></span>
+              <span><strong>Sub-Monthly Shoulder Compositing:</strong> Move to 5-day composites during peak April–May leaf-out windows to capture rapid phenological transitions.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mt-1.5 mr-3 shrink-0"></span>
+              <span><strong>GLCM Texture Analysis:</strong> Incorporate Gray-Level Co-occurrence Matrix (GLCM) texture derived from 10m Near-Infrared (B8) imagery to quantify crown granularity.</span>
+            </li>
+            <li class="flex items-start">
+              <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mt-1.5 mr-3 shrink-0"></span>
+              <span><strong>LiDAR Canopy Height Integration:</strong> Integrate WI-DNR LiDAR point clouds to build 10m Canopy Height Models (CHM), differentiating mature timber stands from young successional growth.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bottom Repository Link -->
+      <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-3">Access Earth Engine Scripts</h3>
+        <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
+          Explore the JavaScript code modules across Tiers 1 through 5, sampling routines, and multi-sensor master cube workflows in GitHub.
+        </p>
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+        >
+          View GEE Repository on GitHub
         </a>
       </div>
     </main>
