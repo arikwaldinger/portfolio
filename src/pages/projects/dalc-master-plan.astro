@@ -10,54 +10,204 @@ import { siteConfig } from '../../config';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DALC Master Plan | {siteConfig.name}</title>
+    <title>DALC Wintergreen Preserve Master Plan | {siteConfig.name}</title>
   </head>
   <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
     <Header />
 
     <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <!-- Navigation Back Link -->
       <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
         ← Back to Portfolio
       </a>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-        Driftless Area Land Conservancy Master Plan
+      <!-- Page Title & Subtitle -->
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+        Wintergreen Preserve Baseline Assessment & Master Plan
       </h1>
-
-      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-        Architected a multi-criteria spatial decision framework using ArcGIS Pro and high-resolution LiDAR data to target capital allocation, ecological restoration, and land protection strategies across a <strong class="text-emerald-400">245-acre nature preserve</strong> in Southwestern Wisconsin's Driftless Area.
+      <p class="text-xl text-emerald-400 font-semibold mb-3">
+        Spatial MCE & GIS Decision Framework for the Driftless Area Land Conservancy
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Technical Stack & Methods</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• <strong>GIS Architecture:</strong> ArcGIS Pro, AGOL, QGIS</li>
-            <li>• <strong>Data Datasets:</strong> USGS LiDAR DEMs, 1m Canopy Models, SSURGO Soil Series</li>
-            <li>• <strong>Spatial Framework:</strong> Multi-Criteria Evaluation (MCE) Modeling</li>
-            <li>• <strong>Core Indices:</strong> Restoration Priority Index (RPI) & Protection Priority Index (PPI)</li>
-          </ul>
-        </div>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Established a quantitative ecological baseline, three-tiered stewardship hierarchy, and long-term GIS monitoring framework for the 245-acre Wintergreen Preserve in Spring Green, WI. Fusing a 110-point mobile GIS grid, multi-community botanical sampling, and priority operational sequencing along the Lower Wisconsin State Riverway.
+      </p>
 
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Core Deliverables</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• MCE spatial model targeting invasive removal and oak savanna restoration</li>
-            <li>• Flow accumulation and slope steepness erosion risk mapping</li>
-            <li>• Comprehensive Property Management Plan with cartographic maps</li>
-            <li>• Executive priority matrix presented to conservancy leadership</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="my-8">
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-10">
         <a 
           href="https://github.com/arikwaldinger" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
         >
-          View Spatial Project Repository
+          View GIS Repository
+        </a>
+      </div>
+
+      <!-- Main Survey Graphic -->
+      <div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
+        <img 
+          src="/portfolio/WintergreenSurvey.jpg" 
+          alt="Wintergreen Preserve Boundary and 110 Systematic Sampling Grid Points" 
+          class="w-full h-auto rounded-md border border-gray-700"
+        />
+        <p class="text-sm text-gray-400 text-center mt-3">
+          Figure 1: 245-acre Wintergreen Preserve property boundary overlaid with the 110-point systematic 95-meter sampling grid for ArcGIS Field Maps inventory.
+        </p>
+      </div>
+
+      <!-- Quick Specs Banner -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 text-center text-sm mb-12">
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Preserve Extent</span>
+          <strong class="text-white text-base">245 Acres</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Sampling Grid</span>
+          <strong class="text-emerald-400 text-base">110 Points (95m)</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">River Frontage</span>
+          <strong class="text-white text-base">~6,000 Feet</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Native Flora</span>
+          <strong class="text-emerald-400 text-base">40+ Species</strong>
+        </div>
+      </div>
+
+      <!-- Section 1: Introduction & Regional Context -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          1. Site Context & Regional Significance
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Acquired by the Driftless Area Land Conservancy (DALC) in 2025, the Wintergreen Preserve protects nearly a mile of undeveloped shoreline along the Lower Wisconsin State Riverway—a <strong>Ramsar Wetland of International Importance</strong>. The property directly adjoins Frank Lloyd Wright’s historic <strong>Taliesin estate</strong> (UNESCO World Heritage Site), creating a contiguous, unfragmented habitat corridor that buffers interior species against edge effects.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          The site encompasses a rich matrix of fire-suppressed Oak Woodlands, Floodplain Forests, potential Shaded Sandstone Cliffs, rare north-facing Pine Relicts, and cedar-encroached Dry-Mesic Prairies surrounding a former 1980s commercial ski hill and a 15,000 sq. ft. lodge.
+        </p>
+      </section>
+
+      <!-- Section 2: Mobile GIS & Field Methodology -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          2. Mobile GIS Architecture & Sampling Schema
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          A systematic sampling framework was engineered in ArcGIS Pro using a 95-meter regular fishnet grid clipped to the property boundary, yielding 110 unbiased inventory locations:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">ArcGIS Field Maps Mobile Schema</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Configured a file geodatabase with coded value domains for offline mobile collection in steep bluff coulees. Captured community structure, invasive severity brackets (0–100%), and operational action recommendations.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Targeted Polygon Mapping</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Delineated discrete localized features on the ground, including 3 clonal Black Locust (<em>Robinia pseudoacacia</em>) networks, active road erosion gullies, and an active Bald Eagle nest corridor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Baseline Discoveries & Key Findings -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          3. Baseline Ecological Discoveries
+        </h2>
+        <div class="space-y-4 text-gray-300">
+          <p class="leading-relaxed">
+            • <strong>High Restoration Resilience:</strong> Overall invasive species density across the unmanaged former ski runs was unexpectedly mild. Native successional flora persists across former ski corridors, presenting a cost-effective restoration window.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>High-Value Remnants:</strong> Documented over 40 native forb and grass species, including Pasque Flower, Bird's-foot Violet, Leadplant, and Rattlesnake Master.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Special Status Wildlife & Flora:</strong> Mapped an active Bald Eagle (<em>Haliaeetus leucocephalus</em>) nest in the northwestern river corridor requiring seasonal protection buffers, along with a potential population of Swamp Agrimony (<em>Agrimonia parviflora</em>, state species of special concern).
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Three-Tiered Operational Stewardship Framework -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          4. Three-Tiered Operational Stewardship Framework
+        </h2>
+        <div class="space-y-4 mb-8">
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 1: Immediate High ROI & Critical Remnants</h3>
+            <p class="text-sm text-gray-300">
+              Deploy prescribed fire using existing road/trail burn breaks. Execute pre-TSI invasive control to prevent weed explosions prior to canopy opening. Protect fragile pine relicts, stabilize road erosion gullies, and clear brush behind the lodge for viewshed restoration and venue revenue.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 2: Targeted Medium-Priority Maintenance</h3>
+            <p class="text-sm text-gray-300">
+              Routine invasive suppression along woodland margins and trails. Low-volume foliar, cut-stump, and basal bark treatments for buckthorn, honeysuckle, autumn olive, and barberry, with early-season foliar spraying for garlic mustard and crown vetch.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 3: Strategic Containment & Low Intervention</h3>
+            <p class="text-sm text-gray-300">
+              Maintain low-intervention monitoring for self-sustaining river floodplain forests. Enforce outer-boundary containment for the 3 Black Locust clone networks to prevent root suckering until Tier 1 areas are secured and multi-year removal capacity is established.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Long-Term Resurvey & Monitoring Framework -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          5. Long-Term Resurvey & Monitoring Framework
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Utilizes the 110 systematic sampling points as a repeatable spatial backbone under a two-tiered resurvey schedule:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">1–2 Year Stratified Sub-Sampling</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Monitors a targeted subset of ~25–30 points (~25% of grid) stratified across active management zones (prairie re-establishment, lodge grounds, restored savannas, and Black Locust perimeters) for rapid operational feedback.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">5–10 Year Full Grid Macro-Surveys</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Re-surveys all 110 points on a 5- to 10-year macro-cycle or following major landscape disturbances (wildfire, storm blowdowns) to track property-wide canopy structure and unmanaged buffer health.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/60 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-3">Essential Temporal Tracking Metrics</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>• <strong>Invasive Cover Shifts:</strong> Track movement across percent-cover brackets (e.g., 26–50% down to 0–5%) using Field Maps domains.</li>
+            <li>• <strong>Black Locust Clonal Dynamics:</strong> Map perimeter movement to verify containment or detect root-suckering.</li>
+            <li>• <strong>Native Recruitment & Canopy Openness:</strong> Log native indicator recruitment post-burn and evaluate canopy thinning progress.</li>
+            <li>• <strong>Targeted Species Follow-Up:</strong> Re-visit flagged <em>Agrimonia parviflora</em> bluff populations during peak flowering windows.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bottom Call-To-Action -->
+      <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-3">Explore the Complete Geospatial Schema</h3>
+        <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
+          Inspect the ArcGIS Pro geodatabase structure, field domain definitions, and spatial decision layers on GitHub.
+        </p>
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+        >
+          View GitHub Repository
         </a>
       </div>
     </main>
