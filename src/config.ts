@@ -28,13 +28,6 @@ export const siteConfig = {
 
   projects: [
     {
-      name: "U-Net Semantic Segmentation of Burn Scars",
-      description:
-        "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
-      link: "/portfolio/projects/burn-scar-segmentation",
-      skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
-    },
-   {
       name: "WISCLAND 2.0 High-Resolution Update",
       description:
         "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
@@ -42,9 +35,16 @@ export const siteConfig = {
       skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Multi-Sensor Fusion"],
     },
     {
+      name: "U-Net Semantic Segmentation of Burn Scars",
+      description:
+        "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
+      link: "/portfolio/projects/burn-scar-segmentation",
+      skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
+    },
+    {
       name: "Driftless Area Land Conservancy Master Plan",
       description:
-        "Architected a multi-criteria spatial decision framework (Restoration Priority Index & Protection Priority Index) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
+        "Architected a multi-criteria spatial decision framework (Restoration & Protection Priority Indices) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
       link: "/portfolio/projects/dalc-master-plan",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
@@ -58,8 +58,9 @@ export const siteConfig = {
   ],
 
   experience: [
-     {
+    {
       company: "Private Estate",
+      logo: "/portfolio/logos/private.png",
       title: "Private Land Stewardship Consultant",
       dateRange: "May 2026 - Sept 2026",
       bullets: [
@@ -68,9 +69,9 @@ export const siteConfig = {
         "Managed independent contract operations, including project scoping, competitive bidding, budget and expense tracking, and direct landowner consultation to align ecological outcomes with client goals.",
       ],
     },
-       {
+    {
       company: "Wisconsin Department of Natural Resources (DNR)",
-         logo: "/portfolio/public/logos/WI-DNR.png"
+      logo: "/portfolio/logos/wdnr.png",
       title: "Fire Rider LTE",
       dateRange: "Feb 2026 - May 2026",
       bullets: [
@@ -81,8 +82,9 @@ export const siteConfig = {
     },
     {
       company: "Wisconsin Department of Natural Resources (DNR)",
-      title: "Conservation Biologist / Advanced Wildlife Technician (Dual LTE)",
-      dateRange: "Sept 2024 - Jun 2025",
+      logo: "/portfolio/logos/wdnr.png",
+      title: "Conservation Biologist / Advanced Wildlife Technician",
+      dateRange: "Sept 2024 - Present",
       bullets: [
         "Executed habitat restoration and ecological management on State Natural Areas (SNAs) across Southern Wisconsin, targeting rare and endangered species protection.",
         "Conducted vegetation surveys and habitat assessments for rare, threatened, and endangered species, contributing structured records to the Natural Heritage Inventory database.",
@@ -91,8 +93,9 @@ export const siteConfig = {
     },
     {
       company: "Morchella LLC",
+      logo: "/portfolio/logos/morchella.png",
       title: "Lead Restoration Technician & Field Operations",
-      dateRange: "Mar 2023 - Sept 2024",
+      dateRange: "Mar 2023 - Sept 2025",
       bullets: [
         "Created custom GIS mapping products using QGIS and Avenza Maps for site visualization, project tracking, and stakeholder reporting.",
         "Partnered with private landowners, non-profit organizations, and government agencies to design and execute land stewardship plans across diverse Midwestern landscapes.",
@@ -101,8 +104,9 @@ export const siteConfig = {
     },
     {
       company: "Mississippi Valley Conservancy",
+      logo: "/portfolio/logos/mvc.png",
       title: "Land Management Technician (Crew Leader)",
-      dateRange: "Dec 2021 - Mar 2022, Feb 2023 - Aug 2023",
+      dateRange: "Feb 2023 - Aug 2023",
       bullets: [
         "Managed ecological stewardship across 5,000+ acres of nature preserves in the Driftless Area, conducting prescribed burning, timber stand improvement, and invasive plant management.",
         "Utilized ArcGIS Pro and Avenza Maps to map restoration zones, record rare species occurrences, and evaluate project impact.",
@@ -111,8 +115,9 @@ export const siteConfig = {
     },
     {
       company: "Center for Environmental Management of Military Lands (CEMML)",
+      logo: "/portfolio/logos/cemml.png",
       title: "Lead Fisheries Technician (Fort McCoy)",
-      dateRange: "May 2021 - Aug 2021, Mar 2022-Aug 2022",
+      dateRange: "May 2021 - Aug 2022",
       bullets: [
         "Managed aquatic resource and fisheries databases to fulfill military installation environmental compliance and natural resource management standards.",
         "Directed crew execution of stream habitat surveys, water quality monitoring, electrofishing, and public angler surveys.",
