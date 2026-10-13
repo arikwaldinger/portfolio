@@ -69,7 +69,7 @@ export const siteConfig = {
       ],
     },
     {
-      company: "Wisconsin Department of Natural Resources (DNR)",
+      company: "Wisconsin Department of Natural Resources",
       logo: "/portfolio/logos/WI-DNR.png",
       title: "Fire Rider LTE",
       dateRange: "Feb 2026 - May 2026",
@@ -80,7 +80,7 @@ export const siteConfig = {
       ],
     },
     {
-      company: "Wisconsin Department of Natural Resources (DNR)",
+      company: "Wisconsin Department of Natural Resources",
       logo: "/portfolio/logos/WI-DNR.png",
       title: "Conservation Biologist / Advanced Wildlife Technician",
       dateRange: "Sept 2024 - Present",
@@ -93,7 +93,7 @@ export const siteConfig = {
     {
       company: "Morchella LLC",
       logo: "/portfolio/logos/Morchella.jpg",
-      title: "Lead Restoration Technician & Field Operations",
+      title: "Field Operations Manager",
       dateRange: "Mar 2023 - Sept 2025",
       bullets: [
         "Created custom GIS mapping products using QGIS and Avenza Maps for site visualization, project tracking, and stakeholder reporting.",
