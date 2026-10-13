@@ -92,7 +92,7 @@ export const siteConfig = {
     },
     {
       company: "Morchella LLC",
-      logo: "/portfolio/logos/public/logos/Morchella.jpg",
+      logo: "/portfolio/logos/Morchella.jpg",
       title: "Lead Restoration Technician & Field Operations",
       dateRange: "Mar 2023 - Sept 2025",
       bullets: [
