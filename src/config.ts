@@ -124,10 +124,10 @@ export const siteConfig = {
     },
   ],
 
-  education: [
+ education: [
     {
       school: "University of Wisconsin–Madison",
-      logo: "public/logos/UWMad.jpg",
+      logo: "/portfolio/logos/UWMad.jpg",
       degree: "Master of Science in Environmental Conservation: Environmental Observation and Informatics",
       dateRange: "2024 - 2026",
       achievements: [
@@ -137,7 +137,7 @@ export const siteConfig = {
     },
     {
       school: "University of Wisconsin–La Crosse",
-      logo: "public/logos/UWL.jpg",
+      logo: "/portfolio/logos/UWL.jpg",
       degree: "Bachelor of Science in Biology (Minor: Environmental Studies)",
       dateRange: "2016 - 2020",
       achievements: [
