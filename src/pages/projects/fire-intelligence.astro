@@ -16,83 +16,204 @@ import { siteConfig } from '../../config';
     <Header />
 
     <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <!-- Navigation Back Link -->
       <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
         ← Back to Portfolio
       </a>
 
-      <h1 class="text-3xl md:text-4xl font-bold mb-4 text-white">
-        Full-Cycle Fire Intelligence & Soil Stability Risk Model
+      <!-- Page Title & Overview -->
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+        Full-Cycle Fire Intelligence & Soil Risk Model
       </h1>
-
-      <p class="text-lg text-gray-300 mb-8 leading-relaxed">
-        Engineered an end-to-end cloud spatial pipeline in Google Earth Engine (GEE) fusing Sentinel-2 multispectral imagery, terrain DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn severity and model post-fire soil erosion risk.
+      <p class="text-xl text-emerald-400 font-semibold mb-3">
+        Evaluating Prescribed Burn Severity, Structural Efficacy, and Watershed Risks in Google Earth Engine
       </p>
 
-<!-- Avoca Prairie dNBR Fire Intelligence Image & Legend -->
-<div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
-  <img 
-    src="/portfolio/Avoca_DNBR.png" 
-    alt="Delta Normalized Burn Ratio (dNBR) Map of Avoca Prairie and Savanna Spring 2025 Burn" 
-    class="w-full h-auto rounded-md border border-gray-700"
-  />
-  
-  <div class="mt-4 pt-3 border-t border-gray-700">
-    <p class="text-sm font-semibold text-gray-200 text-center mb-3">
-      Figure 1: Delta Normalized Burn Ratio (∆NBR) assessment of the Spring 2025 500-acre prescribed burn unit at Avoca Prairie and Savanna State Natural Area.
-    </p>
-    
-    <!-- Map Key / Legend -->
-    <div class="bg-gray-900/80 p-3 rounded border border-gray-700 text-xs sm:text-sm">
-      <span class="block font-semibold text-emerald-400 mb-2 text-center uppercase tracking-wider">Map Legend & Spectral Classification</span>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-        <div class="flex items-start space-x-2">
-          <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shrink-0 mt-1"></span>
-          <span class="text-gray-300"><strong class="text-white">+1 (Green):</strong> Successful fuel reduction (Low to Mod-High dNBR)</span>
-        </div>
-        <div class="flex items-start space-x-2">
-          <span class="w-3 h-3 rounded-full bg-gray-400 inline-block shrink-0 mt-1"></span>
-          <span class="text-gray-300"><strong class="text-white">0 (Grey):</strong> Unburned / Mosaic Refugia</span>
-        </div>
-        <div class="flex items-start space-x-2">
-          <span class="w-3 h-3 rounded-full bg-red-500 inline-block shrink-0 mt-1"></span>
-          <span class="text-gray-300"><strong class="text-white">-1 (Red):</strong> Potential Undesired Overburn (High dNBR)</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Engineered a 33-band cloud spatial pipeline in Google Earth Engine (GEE) combining Sentinel-2 multispectral imagery, SRTM DEMs, and machine learning across 2,700 acres to automate burn scar perimeter extraction, grade burn severity, and model post-fire soil stability risks.
+      </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Technical Stack</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• <strong>Platform:</strong> Google Earth Engine (GEE JavaScript API)</li>
-            <li>• <strong>Satellite Data:</strong> Sentinel-2 MSI (NIR/SWIR dNBR calculation)</li>
-            <li>• <strong>Elevation & Soil:</strong> SRTM Elevation DEMs, USDA SSURGO Soil Erodibility (K-Factor)</li>
-            <li>• <strong>Analytics:</strong> Multi-sensor spectral fusion and spatial logic trees</li>
-          </ul>
-        </div>
-
-        <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-          <h3 class="text-xl font-semibold mb-3 text-emerald-400">Key Analytical Features</h3>
-          <ul class="space-y-2 text-gray-300">
-            <li>• Pre- and post-fire spectral difference (dNBR) burn severity mapping</li>
-            <li>• Terrain slope & overland flow velocity modeling from SRTM DEMs</li>
-            <li>• Post-fire soil erosion risk matrix highlighting vulnerable watersheds</li>
-            <li>• Fire intelligence mapping supporting post-burn ecological monitoring</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="my-8">
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-8">
+        <a 
+          href="https://youtu.be/jvp7yW0xpqY?si=0dyH4guKxP4TKxUg" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
+        >
+          <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+          </svg>
+          Watch Youtube Presentation
+        </a>
         <a 
           href="https://github.com/arikwaldinger" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
         >
           View GEE Repository
         </a>
+      </div>
+
+      <!-- Institutional & Data Disclaimer -->
+      <div class="bg-gray-800/80 border-l-4 border-amber-500 p-4 rounded-r-lg mb-10 text-xs sm:text-sm text-gray-300 leading-relaxed">
+        <strong class="text-amber-400 font-semibold block mb-1">Disclaimer:</strong>
+        This project and associated presentation were prepared independently and are not part of my official role with the Wisconsin Department of Natural Resources. Any opinions, findings, and conclusions expressed are my own and should not be interpreted as representing the Department. All data utilized is publicly available.
+      </div>
+
+      <!-- Main Visual Graphic & Legend -->
+      <div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
+        <img 
+          src="/portfolio/Avoca_DNBR.png" 
+          alt="Delta Normalized Burn Ratio (dNBR) Map of Avoca Prairie and Savanna Spring 2025 Burn" 
+          class="w-full h-auto rounded-md border border-gray-700"
+        />
+        
+        <div class="mt-4 pt-3 border-t border-gray-700">
+          <p class="text-sm font-semibold text-gray-200 text-center mb-3">
+            Figure 1: Delta Normalized Burn Ratio (&Delta;NBR) evaluation of the Spring 2025 500-acre prescribed burn unit at Avoca Prairie and Savanna State Natural Area.
+          </p>
+          
+          <!-- Map Key / Legend -->
+          <div class="bg-gray-900/80 p-3 rounded border border-gray-700 text-xs sm:text-sm">
+            <span class="block font-semibold text-emerald-400 mb-2 text-center uppercase tracking-wider">Map Legend & Spectral Classification</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              <div class="flex items-start space-x-2">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shrink-0 mt-1"></span>
+                <span class="text-gray-300"><strong class="text-white">+1 (Green):</strong> Successful fuel reduction (Low to Mod-High dNBR)</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="w-3 h-3 rounded-full bg-gray-400 inline-block shrink-0 mt-1"></span>
+                <span class="text-gray-300"><strong class="text-white">0 (Grey):</strong> Unburned / Mosaic Refugia</span>
+              </div>
+              <div class="flex items-start space-x-2">
+                <span class="w-3 h-3 rounded-full bg-red-500 inline-block shrink-0 mt-1"></span>
+                <span class="text-gray-300"><strong class="text-white">-1 (Red):</strong> Potential Undesired Overburn (High dNBR)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Ecological Mandate -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          1. Ecological Mandate & Problem Statement
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Historically, Southern Wisconsin’s tallgrass prairies and oak savannas were maintained by low-intensity surface fires that recycled nutrients and suppressed shade-tolerant brush. Decades of fire suppression have led to heavy woody encroachment and choked understories. While prescribed fire is critical for ecological restoration, traditional success metrics rely on simple "blackened acres" rather than structural outcomes or soil health. In intense burn units or on steep Driftless Area slopes, overburning can bake soils into a hydrophobic state, destroying root structures and triggering severe post-fire erosion and watershed sedimentation. This project engineered an automated cloud pipeline in Google Earth Engine (GEE) to scientifically evaluate burn severity, quantify structural effectiveness, and identify soil stability risks across a 2,700-acre portfolio.
+        </p>
+
+        <!-- Quick Metrics Banner -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 text-center text-sm my-6">
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Portfolio Area</span>
+            <strong class="text-white text-base">2,700 Acres</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Random Forest Acc.</span>
+            <strong class="text-emerald-400 text-base">94.4%</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Jaccard Index (IoU)</span>
+            <strong class="text-white text-base">0.93</strong>
+          </div>
+          <div>
+            <span class="block text-gray-400 text-xs uppercase">Feature Stack</span>
+            <strong class="text-emerald-400 text-base">33 Bands</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2: Machine Learning & Data Pipeline -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          2. Machine Learning Framework & Data Architecture
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          The pipeline fuses 33 spectral, terrain, and soil variables into a Random Forest classifier trained on 128 field-verified ground-truth polygons across 16 prescribed burn units in Southern Wisconsin:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">33-Band Spectral Fusion Stack</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Synthesizes Pre-Fire, Burn-Season, and Post-Fire Sentinel-2 time steps with specialized ash/char indices (MIRBI, BAIS2, midBAI, NBR), SRTM elevation models, slope vectors, and SSURGO soil erodibility indices.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Supervised Random Forest Classifier</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              200-tree ensemble trained on 128 field-delineated truth polygons. Achieved a <strong>94.4% Overall Accuracy</strong> and a <strong>0.93 Jaccard Index</strong>, significantly outperforming XGBoost and SVM benchmarks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Key Insights & Technical Adaptive Engines -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          3. Technical Adaptive Engines & Key Insights
+        </h2>
+        <div class="space-y-4 text-gray-300">
+          <p class="leading-relaxed">
+            • <strong>Mid-Season SWIR Prominence:</strong> Variable importance rankings showed mid-season SWIR indices (midBAI, SWIR1/SWIR2) dominated classifier performance. While black ash is a fleeting signal quickly erased by rain, mid-season SWIR indices capture a persistent combustion residue fingerprint.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Minimum NBR Ash Reducer:</strong> Frequent Midwestern cloud cover and rapid grass recovery can erase burn signatures within days. A custom <code class="text-emerald-300 bg-gray-800 px-1 py-0.5 rounded">min()</code> reducer locks onto the darkest ash pixels across multi-week stacks before vegetation regrowing washes out the signal.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Year-Over-Year Phenology Matching:</strong> For late-spring woodland burns where leaf-on canopies obscure ground char, the pipeline compares post-burn May imagery against an unburned May baseline from the previous year for an accurate leaf-on severity comparison.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Operational Deliverables -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          4. Decision Support Deliverables & Restoration Scorecards
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-white mb-2">Fire Effectiveness Index (FEI)</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Translates continuous dNBR values into management categories: Low/Mod Severity (Success), Unburned Mosaic (Refugia), and High Severity (Potential Overburn Flag for soil stabilization).
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-white mb-2">Vegetation Recovery Trajectories</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Tracks multi-year peak summer greenness (&Delta;NDVI<sub>2022–2025</sub>) across treated units, confirming long-term ecological reset, brush suppression, and native vigor recovery.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bottom Repository & Presentation Callout -->
+      <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-3">Explore the Full Presentation & Codebase</h3>
+        <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
+          Watch the live recorded presentation or inspect the complete Google Earth Engine JavaScript codebase and classifier setup on GitHub.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a 
+            href="https://youtu.be/jvp7yW0xpqY?si=0dyH4guKxP4TKxUg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
+          >
+            Watch Youtube Presentation
+          </a>
+          <a 
+            href="https://github.com/arikwaldinger" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
+          >
+            View GEE Repository
+          </a>
+        </div>
       </div>
     </main>
 
