@@ -1,150 +1,217 @@
-export const siteConfig = {
-  name: "Arik Waldinger",
-  title: "Geospatial Specialist | M.S. Environmental Observation & Informatics",
-  description: "Portfolio of Arik Waldinger — Spatial Data Specialist, Remote Sensing Analyst, and Natural Resource Operator.",
-  accentColor: "#1b4332",
+---
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import '../../styles/global.css';
+import { siteConfig } from '../../config';
+---
 
-  social: {
-    email: "awaldinger9@gmail.com",
-    linkedin: "https://www.linkedin.com/in/arik-waldinger/",
-    github: "https://github.com/arikwaldinger",
-  },
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DALC Wintergreen Preserve Master Plan | {siteConfig.name}</title>
+  </head>
+  <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col font-sans">
+    <Header />
 
-  aboutMe:
-    "Spatial data specialist, remote sensing analyst, and natural resource manager holding an M.S. in Environmental Observation & Informatics from UW-Madison. Brings over 5 years of operational experience across Midwestern ecosystems, bridging high-performance spatial computational tools—Google Earth Engine (GEE), PyTorch deep learning, and Esri enterprise GIS—with on-the-ground prescribed fire execution, ecological restoration, and land stewardship management.",
+    <main class="max-w-4xl mx-auto px-6 py-12 flex-grow">
+      <!-- Navigation Back Link -->
+      <a href="/portfolio/" class="text-emerald-400 hover:text-emerald-300 font-medium mb-6 inline-block">
+        ← Back to Portfolio
+      </a>
 
-  skills: [
-    "Google Earth Engine (GEE)",
-    "ArcGIS Pro / AGOL / FieldMaps",
-    "Python (PyTorch, ArcPy, Pandas)",
-    "R (sf, terra, ggplot2)",
-    "Remote Sensing & LiDAR Processing",
-    "QGIS & Avenza Maps",
-    "Random Forest & U-Net CNNs",
-    "NWCG Wildland Fire (S-130/190/211/219/290)",
-    "Spatial Database Management",
-    "Ecological Field Methods & Botany",
-  ],
+      <!-- Page Title & Subtitle -->
+      <h1 class="text-3xl md:text-5xl font-bold mb-4 text-white">
+        Wintergreen Preserve Baseline Assessment & Master Plan
+      </h1>
+      <p class="text-xl text-emerald-400 font-semibold mb-3">
+        Spatial MCE & GIS Decision Framework for the Driftless Area Land Conservancy
+      </p>
 
-  projects: [
-    {
-      name: "WISCLAND 2.0: Statewide 10m Forest Species Mapping",
-      description:
-        "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
-      link: "/portfolio/projects/wiscland",
-      skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Multi-Sensor Fusion"],
-    },
-    {
-      name: "U-Net Semantic Segmentation of Burn Scars",
-      description:
-        "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
-      link: "/portfolio/projects/burn-scar-segmentation",
-      skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
-    },
-    {
-      name: "Driftless Area Land Conservancy Master Plan",
-      description:
-        "Architected a multi-criteria spatial decision framework (Restoration & Protection Priority Indices) in ArcGIS Pro to guide capital allocation and conservation strategies across a 245-acre preserve.",
-      link: "/portfolio/projects/dalc-master-plan",
-      skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
-    },
-    {
-      name: "Full-Cycle Fire Intelligence & Soil Risk Model",
-      description:
-        "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
-      link: "/portfolio/projects/fire-intelligence",
-      skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
-    },
-  ],
+      <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+        Established a quantitative ecological baseline, three-tiered stewardship hierarchy, and long-term GIS monitoring framework for the 245-acre Wintergreen Preserve in Spring Green, WI. Fusing a 110-point mobile GIS grid, multi-community botanical sampling, and priority operational sequencing along the Lower Wisconsin State Riverway.
+      </p>
 
- experience: [
-    {
-      company: "Private Estate",
-      title: "Private Land Stewardship Consultant",
-      dateRange: "May 2026 - Sept 2026",
-      bullets: [
-        "Formulated a comprehensive property management plan, establishing long-term ecological restoration benchmarks and land-use strategies across a 17-acre prairie and woodland estate.",
-        "Deployed integrated chemical/mechanical herbaceous control, timber stand improvements (TSI), native plantings, and trail maintenance.",
-        "Managed independent contract operations, including project scoping, competitive bidding, budget and expense tracking, and direct landowner consultation to align ecological outcomes with client goals.",
-      ],
-    },
-    {
-      company: "Wisconsin Department of Natural Resources",
-      logo: "/portfolio/logos/WI-DNR.png",
-      title: "Fire Rider LTE",
-      dateRange: "Feb 2026 - May 2026",
-      bullets: [
-        "Executed tactical wildland fire suppression and prescribed burn operations, managing line construction, ignition sequences, fire behavior monitoring, and mop-up under strict NWCG safety standards.",
-        "Operated and maintained heavy tactical apparatus and fire equipment—including engines, tractor plows, portable pumps, chainsaws, and hose lays—ensuring constant mission readiness during peak fire windows.",
-        "Led hazardous fuels reduction and burn unit preparation across state natural areas, conducting brush thinning, fuel inventory reporting, and water/additive line securing for public safety and ecological restoration.",
-      ],
-    },
-    {
-      company: "Wisconsin Department of Natural Resources",
-      logo: "/portfolio/logos/WI-DNR.png",
-      title: "Conservation Biologist / Advanced Wildlife Technician",
-      dateRange: "Sept 2024 - Jun 2025",
-      bullets: [
-        "Executed habitat restoration and ecological management on State Natural Areas (SNAs) across Southern Wisconsin, targeting rare and endangered species protection.",
-        "Conducted vegetation surveys and habitat assessments for rare, threatened, and endangered species, contributing structured records to the Natural Heritage Inventory database.",
-        "Served on prescribed fire crews in wildland ignition, firebreak construction, holding, mop-up, and overnight monitoring operations.",
-      ],
-    },
-    {
-      company: "Morchella LLC.",
-      logo: "/portfolio/logos/Morchella.jpg",
-      title: "Field Operations Manager",
-      dateRange: "Mar 2023 - Sept 2025",
-      bullets: [
-        "Created custom GIS mapping products using QGIS and Avenza Maps for site visualization, project tracking, and stakeholder reporting.",
-        "Partnered with private landowners, non-profit organizations, and government agencies to design and execute land stewardship plans across diverse Midwestern landscapes.",
-        "Supervised field teams in timber stand improvement, invasive species eradication, and ecological restoration execution.",
-      ],
-    },
-    {
-      company: "Mississippi Valley Conservancy",
-      logo: "/portfolio/logos/MVC.png",
-      title: "Land Management Technician (Crew Leader)",
-      dateRange: "Feb 2023 - Aug 2023, Dec 2021 - Mar 2022",
-      bullets: [
-        "Managed ecological stewardship across 5,000+ acres of nature preserves in the Driftless Area, conducting prescribed burning, timber stand improvement, and invasive plant management.",
-        "Utilized ArcGIS Pro and Avenza Maps to map restoration zones, record rare species occurrences, and evaluate project impact.",
-        "Led and mentored seasonal crew members in chainsaw operations, herbicide application, safety compliance, and field restoration protocols.",
-      ],
-    },
-    {
-      company: "Center for Environmental Management of Military Lands (CEMML)",
-      logo: "/portfolio/logos/CEMML.png",
-      title: "Lead Fisheries Technician (Fort McCoy)",
-      dateRange: "Mar 2022 - Nov 2022, May 2021 - Aug 2021",
-      bullets: [
-        "Managed aquatic resource and fisheries databases to fulfill military installation environmental compliance and natural resource management standards.",
-        "Directed crew execution of stream habitat surveys, water quality monitoring, electrofishing, and public angler surveys.",
-      ],
-    },
-  ],
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap gap-4 mb-10">
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
+        >
+          View GIS Repository
+        </a>
+      </div>
 
- education: [
-    {
-      school: "University of Wisconsin–Madison",
-      logo: "/portfolio/logos/UWMad.jpg",
-      degree: "Master of Science in Environmental Conservation: Environmental Observation and Informatics",
-      dateRange: "2024 - 2026",
-      achievements: [
-        "Specialized in spatial data science, satellite remote sensing, machine learning, and conservation GIS.",
-        "Featured project work: High-resolution land cover scaling and deep learning burn scar segmentation.",
-      ],
-    },
-    {
-      school: "University of Wisconsin–La Crosse",
-      logo: "/portfolio/logos/UWL.jpg",
-      degree: "Bachelor of Science in Biology (Minor: Environmental Studies)",
-      dateRange: "2016 - 2020",
-      achievements: [
-        "Emphasis on botany, natural resource management, ecological field methods, and conservation biology.",
-      ],
-    },
-  ],
-};
+      <!-- Main Survey Graphic -->
+      <div class="my-8 bg-gray-800 p-4 rounded-lg border border-gray-700 shadow-lg">
+        <img 
+          src="/portfolio/WintergreenSurvey.jpg" 
+          alt="Wintergreen Preserve Boundary and 110 Systematic Sampling Grid Points" 
+          class="w-full h-auto rounded-md border border-gray-700"
+        />
+        <p class="text-sm text-gray-400 text-center mt-3">
+          Figure 1: 245-acre Wintergreen Preserve property boundary overlaid with the 110-point systematic 95-meter sampling grid for ArcGIS Field Maps inventory.
+        </p>
+      </div>
 
-export const config = siteConfig;
+      <!-- Quick Specs Banner -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 text-center text-sm mb-12">
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Preserve Extent</span>
+          <strong class="text-white text-base">245 Acres</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Sampling Grid</span>
+          <strong class="text-emerald-400 text-base">110 Points (95m)</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">River Frontage</span>
+          <strong class="text-white text-base">~6,000 Feet</strong>
+        </div>
+        <div>
+          <span class="block text-gray-400 text-xs uppercase">Native Flora</span>
+          <strong class="text-emerald-400 text-base">40+ Species</strong>
+        </div>
+      </div>
+
+      <!-- Section 1: Introduction & Regional Context -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          1. Site Context & Regional Significance
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Acquired by the Driftless Area Land Conservancy (DALC) in 2025, the Wintergreen Preserve protects nearly a mile of undeveloped shoreline along the Lower Wisconsin State Riverway—a <strong>Ramsar Wetland of International Importance</strong>. The property directly adjoins Frank Lloyd Wright’s historic <strong>Taliesin estate</strong> (UNESCO World Heritage Site), creating a contiguous, unfragmented habitat corridor that buffers interior species against edge effects.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          The site encompasses a rich matrix of fire-suppressed Oak Woodlands, Floodplain Forests, potential Shaded Sandstone Cliffs, rare north-facing Pine Relicts, and cedar-encroached Dry-Mesic Prairies surrounding a former 1980s commercial ski hill and a 15,000 sq. ft. lodge.
+        </p>
+      </section>
+
+      <!-- Section 2: Mobile GIS & Field Methodology -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          2. Mobile GIS Architecture & Sampling Schema
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          A systematic sampling framework was engineered in ArcGIS Pro using a 95-meter regular fishnet grid clipped to the property boundary, yielding 110 unbiased inventory locations:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">ArcGIS Field Maps Mobile Schema</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Configured a file geodatabase with coded value domains for offline mobile collection in steep bluff coulees. Captured community structure, invasive severity brackets (0–100%), and operational action recommendations.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Targeted Polygon Mapping</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Delineated discrete localized features on the ground, including 3 clonal Black Locust (<em>Robinia pseudoacacia</em>) networks, active road erosion gullies, and an active Bald Eagle nest corridor.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Baseline Discoveries & Key Findings -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          3. Baseline Ecological Discoveries
+        </h2>
+        <div class="space-y-4 text-gray-300">
+          <p class="leading-relaxed">
+            • <strong>High Restoration Resilience:</strong> Overall invasive species density across the unmanaged former ski runs was unexpectedly mild. Native successional flora persists across former ski corridors, presenting a cost-effective restoration window.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>High-Value Remnants:</strong> Documented over 40 native forb and grass species, including Pasque Flower, Bird's-foot Violet, Leadplant, and Rattlesnake Master.
+          </p>
+          <p class="leading-relaxed">
+            • <strong>Special Status Wildlife & Flora:</strong> Mapped an active Bald Eagle (<em>Haliaeetus leucocephalus</em>) nest in the northwestern river corridor requiring seasonal protection buffers, along with a potential population of Swamp Agrimony (<em>Agrimonia parviflora</em>, state species of special concern).
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 4: Three-Tiered Operational Stewardship Framework -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          4. Three-Tiered Operational Stewardship Framework
+        </h2>
+        <div class="space-y-4 mb-8">
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 1: Immediate High ROI & Critical Remnants</h3>
+            <p class="text-sm text-gray-300">
+              Deploy prescribed fire using existing road/trail burn breaks. Execute pre-TSI invasive control to prevent weed explosions prior to canopy opening. Protect fragile pine relicts, stabilize road erosion gullies, and clear brush behind the lodge for viewshed restoration and venue revenue.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 2: Targeted Medium-Priority Maintenance</h3>
+            <p class="text-sm text-gray-300">
+              Routine invasive suppression along woodland margins and trails. Low-volume foliar, cut-stump, and basal bark treatments for buckthorn, honeysuckle, autumn olive, and barberry, with early-season foliar spraying for garlic mustard and crown vetch.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border-l-4 border-emerald-500">
+            <h3 class="text-lg font-bold text-white mb-1">Tier 3: Strategic Containment & Low Intervention</h3>
+            <p class="text-sm text-gray-300">
+              Maintain low-intervention monitoring for self-sustaining river floodplain forests. Enforce outer-boundary containment for the 3 Black Locust clone networks to prevent root suckering until Tier 1 areas are secured and multi-year removal capacity is established.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Long-Term Resurvey & Monitoring Framework -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          5. Long-Term Resurvey & Monitoring Framework
+        </h2>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Utilizes the 110 systematic sampling points as a repeatable spatial backbone under a two-tiered resurvey schedule:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">1–2 Year Stratified Sub-Sampling</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Monitors a targeted subset of ~25–30 points (~25% of grid) stratified across active management zones (prairie re-establishment, lodge grounds, restored savannas, and Black Locust perimeters) for rapid operational feedback.
+            </p>
+          </div>
+          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
+            <h3 class="text-lg font-semibold text-emerald-400 mb-2">5–10 Year Full Grid Macro-Surveys</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+              Re-surveys all 110 points on a 5- to 10-year macro-cycle or following major landscape disturbances (wildfire, storm blowdowns) to track property-wide canopy structure and unmanaged buffer health.
+            </p>
+          </div>
+        </div>
+
+        <div class="bg-gray-800/60 p-6 rounded-lg border border-gray-700">
+          <h3 class="text-lg font-semibold text-white mb-3">Essential Temporal Tracking Metrics</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>• <strong>Invasive Cover Shifts:</strong> Track movement across percent-cover brackets (e.g., 26–50% down to 0–5%) using Field Maps domains.</li>
+            <li>• <strong>Black Locust Clonal Dynamics:</strong> Map perimeter movement to verify containment or detect root-suckering.</li>
+            <li>• <strong>Native Recruitment & Canopy Openness:</strong> Log native indicator recruitment post-burn and evaluate canopy thinning progress.</li>
+            <li>• <strong>Targeted Species Follow-Up:</strong> Re-visit flagged <em>Agrimonia parviflora</em> bluff populations during peak flowering windows.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Bottom Call-To-Action -->
+      <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
+        <h3 class="text-xl font-bold text-white mb-3">Explore the Complete Geospatial Schema</h3>
+        <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
+          Inspect the ArcGIS Pro geodatabase structure, field domain definitions, and spatial decision layers on GitHub.
+        </p>
+        <a 
+          href="https://github.com/arikwaldinger" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors shadow-lg"
+        >
+          View GitHub Repository
+        </a>
+      </div>
+    </main>
+
+    <Footer />
+  </body>
+</html>
