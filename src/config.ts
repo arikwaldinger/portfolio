@@ -58,9 +58,29 @@ export const siteConfig = {
   ],
 
   experience: [
+     {
+      company: "Private Estate",
+      title: "Private Land Stewardship Consultant",
+      dateRange: "May 2026 - Sept 2026",
+      bullets: [
+        "Formulated a comprehensive property management plan, establishing long-term ecological restoration benchmarks and land-use strategies across a 17-acre prairie and woodland estate.",
+        "Deployed integrated chemical/mechanical herbaceous control, timber stand improvements (TSI), native plantings, and trail maintenance.",
+        "Managed independent contract operations, including project scoping, competitive bidding, budget and expense tracking, and direct landowner consultation to align ecological outcomes with client goals.",
+      ],
+    },
+       {
+      company: "Wisconsin Department of Natural Resources (DNR)",
+      title: "Fire Rider LTE",
+      dateRange: "Feb 2026 - May 2026",
+      bullets: [
+        "Executed tactical wildland fire suppression and prescribed burn operations, managing line construction, ignition sequences, fire behavior monitoring, and mop-up under strict NWCG safety standards.",
+        "Operated and maintained heavy tactical apparatus and fire equipment—including engines, tractor plows, portable pumps, chainsaws, and hose lays—ensuring constant mission readiness during peak fire windows.",
+        "Led hazardous fuels reduction and burn unit preparation across state natural areas, conducting brush thinning, fuel inventory reporting, and water/additive line securing for public safety and ecological restoration.",
+      ],
+    },
     {
       company: "Wisconsin Department of Natural Resources (DNR)",
-      title: "Conservation Biologist / Advanced Wildlife Technician",
+      title: "Conservation Biologist / Advanced Wildlife Technician (Dual LTE)",
       dateRange: "Sept 2024 - Jun 2025",
       bullets: [
         "Executed habitat restoration and ecological management on State Natural Areas (SNAs) across Southern Wisconsin, targeting rare and endangered species protection.",
