@@ -12,7 +12,7 @@ export const siteConfig = {
   },
 
   aboutMe:
-    "Spatial data specialist, remote sensing analyst, and natural resource manager holding an M.S. in Environmental Observation & Informatics from UW-Madison. Brings over 5 years of operational experience across Midwestern ecosystems, bridging high-performance spatial computational tools—Google Earth Engine (GEE), PyTorch deep learning, and Esri enterprise GIS—with on-the-ground prescribed fire execution, ecological restoration, and land stewardship management.",
+    "Spatial data specialist, remote sensing analyst, and natural resource manager holding an M.S. in Environmental Observation & Informatics from UW-Madison. Brings over 5 years of operational experience across Midwestern ecosystems, bridging high-performance spatial computational tools—Google Earth Engine, PyTorch deep learning, and Esri enterprise GIS—with on-the-ground prescribed fire execution, ecological restoration, and land stewardship management.",
 
   skills: [
     "Google Earth Engine (GEE)",
@@ -50,7 +50,7 @@ export const siteConfig = {
         "Engineered a systematic 110-point mobile GIS sampling grid in ArcGIS Pro and Field Maps to execute a baseline ecological inventory and 3-tiered operational stewardship plan across a 245-acre preserve.",
       link: "/portfolio/projects/dalc-master-plan",
       image: "/portfolio/projectheader/wintergreen_header.png",
-      skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
+      skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Field Survey"],
     },
     {
       name: "Full-Cycle Prescribed Fire Intelligence & Soil Risk Model",
@@ -58,7 +58,7 @@ export const siteConfig = {
         "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
       link: "/portfolio/projects/fire-intelligence",
       image: "/portfolio/projectheader/rxburn_header.png",
-      skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
+      skills: ["Google Earth Engine", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
   ],
 
