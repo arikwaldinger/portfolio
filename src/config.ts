@@ -26,13 +26,12 @@ export const siteConfig = {
     "Ecological Field Methods & Botany",
   ],
 
- projects: [
+  projects: [
     {
       name: "WISCLAND 2.0: Statewide 10m Forest Species Mapping",
       description:
         "Scaled Wisconsin's land cover classification from 30m to 10m resolution in Google Earth Engine across 1.4 billion pixels (35 million acres). Engineered a 5-tier hierarchical Random Forest model achieving 88%–93% species-level precision.",
       link: "/portfolio/projects/wiscland",
-      image: "/portfolio/projectheader/WISC_Header.png",
       skills: ["Google Earth Engine", "JavaScript", "Random Forest", "Multi-Sensor Fusion"],
     },
     {
@@ -40,7 +39,6 @@ export const siteConfig = {
       description:
         "Trained a PyTorch U-Net convolutional neural network with a ResNet50 encoder and mixed-precision training on Sentinel-2 satellite imagery to automate burn scar delineation and post-fire damage severity mapping.",
       link: "/portfolio/projects/burn-scar-segmentation",
-      image: "/portfolio/projectheader/U-net_Header.png",
       skills: ["PyTorch", "Python", "Deep Learning", "Sentinel-2"],
     },
     {
@@ -48,7 +46,6 @@ export const siteConfig = {
       description:
         "Engineered a systematic 110-point mobile GIS sampling grid in ArcGIS Pro and Field Maps to execute a baseline ecological inventory and 3-tiered operational stewardship plan across a 245-acre preserve.",
       link: "/portfolio/projects/dalc-master-plan",
-      image: "",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
     {
@@ -56,7 +53,6 @@ export const siteConfig = {
       description:
         "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
       link: "/portfolio/projects/fire-intelligence",
-      image: "",
       skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
   ],
