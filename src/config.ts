@@ -48,7 +48,7 @@ export const siteConfig = {
       description:
         "Engineered a systematic 110-point mobile GIS sampling grid in ArcGIS Pro and Field Maps to execute a baseline ecological inventory and 3-tiered operational stewardship plan across a 245-acre preserve.",
       link: "/portfolio/projects/dalc-master-plan",
-      image: "", // Add path here when image is ready
+      image: "",
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
     {
@@ -56,7 +56,7 @@ export const siteConfig = {
       description:
         "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
       link: "/portfolio/projects/fire-intelligence",
-      image: "", // Add path here when image is ready
+      image: "",
       skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
   ],
