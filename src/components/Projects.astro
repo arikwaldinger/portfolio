@@ -59,9 +59,8 @@ const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
                       )}
 
                       <div class="space-y-4">
-                        {/* Image Container constrained to 85% width while keeping full natural aspect ratio */}
                         {project.image && project.image.trim() !== "" && (
-                          <div class="overflow-hidden rounded-lg sm:rounded-xl border border-gray-200 max-w-[85%]">
+                          <div class="overflow-hidden rounded-lg sm:rounded-xl border border-gray-200 pr-12 sm:pr-14 md:pr-16">
                             <img
                               src={project.image}
                               alt={project.name}
