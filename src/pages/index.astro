@@ -1,39 +1,55 @@
 ---
-import Header from "../components/Header.astro";
-import Hero from "../components/Hero.astro";
-import About from "../components/About.astro";
-import Projects from "../components/Projects.astro";
-import Experience from "../components/Experience.astro";
-import Education from "../components/Education.astro";
-import Footer from "../components/Footer.astro";
 import { siteConfig } from "../config";
-import "../styles/global.css";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <title>{siteConfig.name} - {siteConfig.title}</title>
-  </head>
-  <body>
-    <Header />
-    <section>
-      <Hero />
-      <About />
-      <Projects />
-      <Experience />
-      <Education />
-    </section>
-    <Footer />
-  </body>
-</html>
+<section id="projects" class="py-16 bg-gray-900/50">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold text-white mb-8 border-b border-gray-800 pb-3">
+      Featured Projects
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        siteConfig.projects.map((project) => (
+          <div class="bg-gray-800 rounded-xl overflow-hidden border border-gray-700 shadow-lg flex flex-col group hover:border-emerald-500/50 transition-all duration-300">
+            {/* Project Header Image (Renders only if path exists in config.ts) */}
+            {project.image && (
+              <a href={project.link} class="block overflow-hidden relative aspect-[1467/470]">
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  width="1467"
+                  height="470"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 border-b border-gray-700"
+                  loading="lazy"
+                />
+              </a>
+            )}
+
+            {/* Project Details Block */}
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                <a href={project.link}>
+                  {project.name}
+                </a>
+              </h3>
+
+              <p class="text-gray-300 text-sm mb-4 leading-relaxed flex-grow">
+                {project.description}
+              </p>
+
+              {/* Skill Badges */}
+              <div class="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-700/50">
+                {project.skills.map((skill) => (
+                  <span class="bg-emerald-950/60 text-emerald-300 border border-emerald-800/50 text-xs px-2.5 py-1 rounded-md font-medium">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
