@@ -26,7 +26,7 @@ export const siteConfig = {
     "Ecological Field Methods & Botany",
   ],
 
-projects: [
+  projects: [
     {
       name: "WISCLAND 2.0: Statewide 10m Forest Species Mapping",
       description:
@@ -56,9 +56,8 @@ projects: [
       skills: ["GEE", "Soil Stability", "Logic Gates", "Multi-Sensor Fusion"],
     },
   ],
-};
 
- experience: [
+  experience: [
     {
       company: "Private Estate",
       title: "Private Land Stewardship Consultant",
@@ -125,7 +124,7 @@ projects: [
     },
   ],
 
- education: [
+  education: [
     {
       school: "University of Wisconsin–Madison",
       logo: "/portfolio/logos/UWMad.jpg",
