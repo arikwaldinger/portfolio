@@ -30,7 +30,7 @@ import { siteConfig } from '../../config';
       </p>
 
       <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-        Engineered a 33-band cloud spatial pipeline in Google Earth Engine (GEE) combining Sentinel-2 multispectral imagery, SRTM DEMs, and machine learning across 2,700 acres to automate burn scar perimeter extraction, grade burn severity, and model post-fire soil stability risks.
+        Engineered a 33-band cloud spatial pipeline in Google Earth Engine (GEE) combining Sentinel-2 multispectral imagery, SRTM DEMs, and Random Forest machine learning across 2,700 acres to automate burn scar perimeter extraction, grade burn severity, and model post-fire soil stability risks.
       </p>
 
       <!-- Action Buttons -->
@@ -44,10 +44,10 @@ import { siteConfig } from '../../config';
           <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
             <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
           </svg>
-          Watch Youtube Presentation
+          Watch YouTube Presentation
         </a>
         <a 
-          href="https://github.com/arikwaldinger" 
+          href="https://github.com/arikwaldinger/rx_fire-intelligence-gee" 
           target="_blank" 
           rel="noopener noreferrer"
           class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-md"
@@ -77,11 +77,11 @@ import { siteConfig } from '../../config';
           
           <!-- Map Key / Legend -->
           <div class="bg-gray-900/80 p-3 rounded border border-gray-700 text-xs sm:text-sm">
-            <span class="block font-semibold text-emerald-400 mb-2 text-center uppercase tracking-wider">Map Legend & Spectral Classification</span>
+            <span class="block font-semibold text-emerald-400 mb-2 text-center uppercase tracking-wider">Map Legend & Operational Scorecard</span>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
               <div class="flex items-start space-x-2">
                 <span class="w-3 h-3 rounded-full bg-emerald-500 inline-block shrink-0 mt-1"></span>
-                <span class="text-gray-300"><strong class="text-white">+1 (Green):</strong> Successful fuel reduction (Low to Mod-High dNBR)</span>
+                <span class="text-gray-300"><strong class="text-white">+1 (Green):</strong> Target Fuel Reduction (Low to Mod-High dNBR)</span>
               </div>
               <div class="flex items-start space-x-2">
                 <span class="w-3 h-3 rounded-full bg-gray-400 inline-block shrink-0 mt-1"></span>
@@ -89,7 +89,7 @@ import { siteConfig } from '../../config';
               </div>
               <div class="flex items-start space-x-2">
                 <span class="w-3 h-3 rounded-full bg-red-500 inline-block shrink-0 mt-1"></span>
-                <span class="text-gray-300"><strong class="text-white">-1 (Red):</strong> Potential Undesired Overburn (High dNBR)</span>
+                <span class="text-gray-300"><strong class="text-white">-1 (Red):</strong> Potential Overburn Flag (High dNBR / Erosion Risk)</span>
               </div>
             </div>
           </div>
@@ -102,13 +102,16 @@ import { siteConfig } from '../../config';
           1. Ecological Mandate & Problem Statement
         </h2>
         <p class="text-gray-300 mb-4 leading-relaxed">
-          Historically, Southern Wisconsin’s tallgrass prairies and oak savannas were maintained by low-intensity surface fires that recycled nutrients and suppressed shade-tolerant brush. Decades of fire suppression have led to heavy woody encroachment and choked understories. While prescribed fire is critical for ecological restoration, traditional success metrics rely on simple "blackened acres" rather than structural outcomes or soil health. In intense burn units or on steep Driftless Area slopes, overburning can bake soils into a hydrophobic state, destroying root structures and triggering severe post-fire erosion and watershed sedimentation. This project engineered an automated cloud pipeline in Google Earth Engine (GEE) to scientifically evaluate burn severity, quantify structural effectiveness, and identify soil stability risks across a 2,700-acre portfolio.
+          Historically, Southern Wisconsin’s tallgrass prairies and oak savannas were maintained by low-intensity surface fires that recycled nutrients and suppressed shade-tolerant brush. Decades of fire suppression have led to heavy woody encroachment and choked understories. While prescribed fire is critical for ecological restoration, traditional success metrics rely on simple "blackened acres" rather than structural outcomes or soil health.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          In intense burn units or on steep Driftless Area slopes, overburning can bake soils into a hydrophobic state, destroying root structures and triggering severe post-fire erosion and watershed sedimentation. This project engineered an automated cloud pipeline in Google Earth Engine (GEE) to scientifically evaluate burn severity, quantify structural effectiveness, and identify soil stability risks across a 2,700-acre portfolio.
         </p>
 
         <!-- Quick Metrics Banner -->
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-lg border border-gray-700 text-center text-sm my-6">
           <div>
-            <span class="block text-gray-400 text-xs uppercase">Portfolio Area</span>
+            <span class="block text-gray-400 text-xs uppercase">Portfolio Extent</span>
             <strong class="text-white text-base">2,700 Acres</strong>
           </div>
           <div>
@@ -126,75 +129,251 @@ import { siteConfig } from '../../config';
         </div>
       </section>
 
-      <!-- Section 2: Machine Learning & Data Pipeline -->
+      <!-- Section 2: Data Pipeline & 33-Band Stack -->
       <section class="mb-12">
         <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
-          2. Machine Learning Framework & Data Architecture
+          2. Multi-Sensor Data Fusion & 33-Band Architecture
         </h2>
         <p class="text-gray-300 mb-6 leading-relaxed">
-          The pipeline fuses 33 spectral, terrain, and soil variables into a Random Forest classifier trained on 128 field-verified ground-truth polygons across 16 prescribed burn units in Southern Wisconsin:
+          Capturing fleeting ash signatures across heterogeneous Midwestern cover types requires going beyond standard post-fire imagery. The model builds a 33-band feature stack per pixel across three seasonal time steps (Pre-Fire, Mid-Season Phenology, and Post-Fire):
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">33-Band Spectral Fusion Stack</h3>
-            <p class="text-sm text-gray-300 leading-relaxed">
-              Synthesizes Pre-Fire, Burn-Season, and Post-Fire Sentinel-2 time steps with specialized ash/char indices (MIRBI, BAIS2, midBAI, NBR), SRTM elevation models, slope vectors, and SSURGO soil erodibility indices.
-            </p>
-          </div>
-          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-            <h3 class="text-lg font-semibold text-emerald-400 mb-2">Supervised Random Forest Classifier</h3>
-            <p class="text-sm text-gray-300 leading-relaxed">
-              200-tree ensemble trained on 128 field-delineated truth polygons. Achieved a <strong>94.4% Overall Accuracy</strong> and a <strong>0.93 Jaccard Index</strong>, significantly outperforming XGBoost and SVM benchmarks.
-            </p>
+        <!-- Band Glossary Summary Table -->
+        <h3 class="text-lg font-semibold text-white mb-3">Band Feature Glossary</h3>
+        <div class="overflow-x-auto mb-8">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Band Family / Index</th>
+                <th class="p-3 border-b border-gray-700">Spectral Components</th>
+                <th class="p-3 border-b border-gray-700">Ecological Mechanism</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr>
+                <td class="p-3 font-semibold text-white">SWIR Bands (B11, B12)</td>
+                <td class="p-3 font-mono text-emerald-300">1610nm & 2190nm</td>
+                <td class="p-3">High sensitivity to surface charcoal deposition, ash retention, and soil moisture loss.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">BAIS2</td>
+                <td class="p-3 font-mono text-emerald-300">Red-Edge & SWIR2</td>
+                <td class="p-3">Burn Area Index for Sentinel-2, specifically tuned to isolate charcoal signatures post-burn.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">MIRBI</td>
+                <td class="p-3 font-mono text-emerald-300">SWIR2 (B12) & SWIR1 (B11)</td>
+                <td class="p-3">Mid-Infrared Burn Index, optimal for detecting charred woody debris in forest understories.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">NBR & NBR2</td>
+                <td class="p-3 font-mono text-emerald-300">NIR (B8) & SWIR2 (B12)</td>
+                <td class="p-3">Normalized Burn Ratio; industry standard for quantifying canopy and ground severity.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">NDVI & NDRE</td>
+                <td class="p-3 font-mono text-emerald-300">NIR (B8), Red (B4), Red-Edge (B5)</td>
+                <td class="p-3">Measures live green vegetation vigor and pre/post canopy leaf area density.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Pre / Mid / Delta Prefixes</td>
+                <td class="p-3 font-mono text-emerald-300">Temporal Comparisons</td>
+                <td class="p-3">Evaluates baseline unburned state, mid-spring phenological greenup, and delta change ($\Delta$).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Ranked Variable Importance Breakdown -->
+        <h3 class="text-lg font-semibold text-white mb-3">33-Band Ranked Variable Importance (Gini Score)</h3>
+        <p class="text-gray-300 text-sm mb-4 leading-relaxed">
+          Random Forest variable importance analysis revealed that <strong>mid-season SWIR indices dominated model decisions</strong>. Because black ash is a fleeting signal quickly erased by spring rains, mid-season SWIR and phenology bands capture the persistent spectral signature of combustion residue:
+        </p>
+        <div class="bg-gray-950 p-4 rounded-lg border border-gray-800 font-mono text-xs text-gray-300 overflow-x-auto mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+            <div><span class="text-emerald-400">01. midBAI:</span> 224.19</div>
+            <div><span class="text-emerald-400">02. midBAIS2:</span> 204.04</div>
+            <div><span class="text-emerald-400">03. MIRBI:</span> 169.54</div>
+            <div><span class="text-emerald-400">04. midNDVI:</span> 168.51</div>
+            <div><span class="text-emerald-400">05. dMIRBI:</span> 164.35</div>
+            <div><span class="text-emerald-400">06. midNBR:</span> 159.06</div>
+            <div><span class="text-emerald-400">07. midBSI:</span> 157.35</div>
+            <div><span class="text-emerald-400">08. MNDWI:</span> 155.20</div>
+            <div><span class="text-emerald-400">09. NBR_NDVI:</span> 142.22</div>
+            <div><span class="text-emerald-400">10. dNDVI:</span> 141.99</div>
+            <div><span>11. preNDVI:</span> 141.04</div>
+            <div><span>12. midNDRE:</span> 139.95</div>
+            <div><span>13. SWIR_ratio:</span> 139.56</div>
+            <div><span>14. preBSI:</span> 132.17</div>
+            <div><span>15. BAIS2:</span> 129.15</div>
+            <div><span>16. NBR2:</span> 128.91</div>
+            <div><span>17. NDVI:</span> 128.36</div>
+            <div><span>18. preNBR:</span> 126.45</div>
+            <div><span>19. preCSI:</span> 125.79</div>
+            <div><span>20. dBAI:</span> 123.81</div>
+            <div><span>21. preBAI:</span> 122.97</div>
+            <div><span>22. BAI:</span> 122.59</div>
+            <div><span>23. dBAIS2:</span> 122.49</div>
+            <div><span>24. EVI:</span> 122.37</div>
+            <div><span>25. dNBR:</span> 122.22</div>
+            <div><span>26. NDRE:</span> 117.39</div>
+            <div><span>27. dBSI:</span> 112.30</div>
+            <div><span>28. preNDRE:</span> 109.11</div>
+            <div><span>29. NBR:</span> 102.02</div>
+            <div><span>30. BSI:</span> 99.99</div>
+            <div><span>31. CRI:</span> 96.75</div>
+            <div><span>32. dNDRE:</span> 95.66</div>
+            <div><span>33. CSI:</span> 83.86</div>
           </div>
         </div>
       </section>
 
-      <!-- Section 3: Key Insights & Technical Adaptive Engines -->
+      <!-- Section 3: Calibrated Prescribed Fire Severity Thresholds -->
       <section class="mb-12">
         <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
-          3. Technical Adaptive Engines & Key Insights
+          3. Calibrated Burn Severity Thresholds (USGS vs. Prescribed Fire)
         </h2>
-        <div class="space-y-4 text-gray-300">
-          <p class="leading-relaxed">
-            • <strong>Mid-Season SWIR Prominence:</strong> Variable importance rankings showed mid-season SWIR indices (midBAI, SWIR1/SWIR2) dominated classifier performance. While black ash is a fleeting signal quickly erased by rain, mid-season SWIR indices capture a persistent combustion residue fingerprint.
-          </p>
-          <p class="leading-relaxed">
-            • <strong>Minimum NBR Ash Reducer:</strong> Frequent Midwestern cloud cover and rapid grass recovery can erase burn signatures within days. A custom <code class="text-emerald-300 bg-gray-800 px-1 py-0.5 rounded">min()</code> reducer locks onto the darkest ash pixels across multi-week stacks before vegetation regrowing washes out the signal.
-          </p>
-          <p class="leading-relaxed">
-            • <strong>Year-Over-Year Phenology Matching:</strong> For late-spring woodland burns where leaf-on canopies obscure ground char, the pipeline compares post-burn May imagery against an unburned May baseline from the previous year for an accurate leaf-on severity comparison.
-          </p>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          Standard USGS burn severity thresholds are calibrated for stand-replacing wildfires. Because intentional prescribed burns are managed at lower intensities, applying raw wildfire thresholds underestimates structural treatment efficacy.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          To account for this, the pipeline <strong>shifts classification thresholds down by 0.05–0.10</strong>. For example, dNBR values peaking between <strong>0.35 and 0.57</strong> (documented at Natural Bridge and Lower Narrows) represent ideal moderate-high severity understory brush knockdowns in prescribed fire management:
+        </p>
+
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Severity Class</th>
+                <th class="p-3 border-b border-gray-700">Standard USGS dNBR Range</th>
+                <th class="p-3 border-b border-gray-700">Prescribed Fire Calibrated dNBR</th>
+                <th class="p-3 border-b border-gray-700">Ecological Interpretation</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr>
+                <td class="p-3 font-semibold text-white">Unburned / Regrowth</td>
+                <td class="p-3 font-mono">&lt; 0.10</td>
+                <td class="p-3 font-mono text-emerald-300">&lt; 0.05</td>
+                <td class="p-3">Unburned refugia or rapid herbaceous regrowth.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Low Severity</td>
+                <td class="p-3 font-mono">0.10 – 0.27</td>
+                <td class="p-3 font-mono text-emerald-300">0.05 – 0.20</td>
+                <td class="p-3">Light litter scorching; canopy unaffected.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">Moderate-Low Severity</td>
+                <td class="p-3 font-mono">0.27 – 0.44</td>
+                <td class="p-3 font-mono text-emerald-300">0.20 – 0.35</td>
+                <td class="p-3">Effective surface fuel consumption & sapling top-kill.</td>
+              </tr>
+              <tr class="bg-emerald-950/30">
+                <td class="p-3 font-bold text-emerald-300">Moderate-High Severity</td>
+                <td class="p-3 font-mono text-emerald-300 font-bold">0.44 – 0.66</td>
+                <td class="p-3 font-mono text-emerald-300 font-bold">0.35 – 0.55</td>
+                <td class="p-3 font-medium text-white">Target understory brush suppression in savannas/woodlands.</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold text-white">High Severity</td>
+                <td class="p-3 font-mono">&gt; 0.66</td>
+                <td class="p-3 font-mono text-red-400 font-bold">&gt; 0.55</td>
+                <td class="p-3">Heavy canopy scorch or potential overburn risk.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <!-- Section 4: Operational Deliverables -->
+      <!-- Section 4: Multi-Unit Portfolio Analysis Table -->
       <section class="mb-12">
         <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
-          4. Decision Support Deliverables & Restoration Scorecards
+          4. Statewide Prescribed Burn Portfolio Summary
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-            <h3 class="text-lg font-semibold text-white mb-2">Fire Effectiveness Index (FEI)</h3>
-            <p class="text-sm text-gray-300 leading-relaxed">
-              Translates continuous dNBR values into management categories: Low/Mod Severity (Success), Unburned Mosaic (Refugia), and High Severity (Potential Overburn Flag for soil stabilization).
-            </p>
-          </div>
-          <div class="bg-gray-800 p-5 rounded-lg border border-gray-700">
-            <h3 class="text-lg font-semibold text-white mb-2">Vegetation Recovery Trajectories</h3>
-            <p class="text-sm text-gray-300 leading-relaxed">
-              Tracks multi-year peak summer greenness (&Delta;NDVI<sub>2022–2025</sub>) across treated units, confirming long-term ecological reset, brush suppression, and native vigor recovery.
-            </p>
-          </div>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          Mean &Delta;NBR response and timing windows across the 15 monitored burn units in Southern Wisconsin:
+        </p>
+
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Burn Unit Name</th>
+                <th class="p-3 border-b border-gray-700">Mean dNBR</th>
+                <th class="p-3 border-b border-gray-700">Primary Ecological Landcover</th>
+                <th class="p-3 border-b border-gray-700">Burn Window</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr><td class="p-3 font-medium text-white">Avoca Prairie & Savanna</td><td class="p-3 font-mono text-emerald-300 font-bold">0.315</td><td class="p-3">Wetland / Lowland Prairie</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 text-xs">Early Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Cruson Smith Slough</td><td class="p-3 font-mono">0.100</td><td class="p-3">Woodland / Wetland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 text-xs">Early Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Arena Pines & Barrens</td><td class="p-3 font-mono">0.162</td><td class="p-3">Woodland / Wetland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 text-xs">Early Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Mazomanie Barrens</td><td class="p-3 font-mono">0.215</td><td class="p-3">Barrens / Oak Savanna</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-blue-900/50 text-blue-300 text-xs">Early Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Marbleseed Prairie</td><td class="p-3 font-mono">0.233</td><td class="p-3">Dry Prairie / Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 text-xs">Mid Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Blue River Sands</td><td class="p-3 font-mono">0.189</td><td class="p-3">Sand Barrens / Open Dunes</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 text-xs">Mid Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Devil's Lake (South Bluff)</td><td class="p-3 font-mono text-emerald-300 font-bold">0.371</td><td class="p-3">Upland Oak Woodland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Dells of Wisconsin River</td><td class="p-3 font-mono">0.223</td><td class="p-3">Gorge Woodland / Pine Relict</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+              <tr class="bg-emerald-950/20"><td class="p-3 font-bold text-emerald-300">Hardscrabble Prairie</td><td class="p-3 font-mono font-bold text-emerald-300">0.539</td><td class="p-3">Woodland / Savanna / Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Yellowstone Wildlife Area</td><td class="p-3 font-mono">0.295</td><td class="p-3">Woodland / Savanna / Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">York Prairie</td><td class="p-3 font-mono">0.223</td><td class="p-3">Remnant Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 text-xs">Mid Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Bakkens Pond</td><td class="p-3 font-mono">0.140</td><td class="p-3">Oak Savanna / Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 text-xs">Mid Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Belmont Prairie</td><td class="p-3 font-mono text-gray-400">-0.130</td><td class="p-3">Wet-Mesic Grassland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-amber-900/50 text-amber-300 text-xs">Mid Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Lower Narrows</td><td class="p-3 font-mono">0.086</td><td class="p-3">Talus Slope Woodland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+              <tr><td class="p-3 font-medium text-white">Natural Bridge State Park</td><td class="p-3 font-mono">0.095</td><td class="p-3">Sandstone Cliff Woodland</td><td class="p-3"><span class="px-2 py-0.5 rounded bg-purple-900/50 text-purple-300 text-xs">Late Spring</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 5: Long-Term Vegetation Recovery (NDVI) -->
+      <section class="mb-12">
+        <h2 class="text-2xl font-bold text-emerald-400 mb-4 border-b border-gray-800 pb-2">
+          5. Multi-Year Vegetation Recovery & Summer Greenness (NDVI)
+        </h2>
+        <p class="text-gray-300 mb-4 leading-relaxed">
+          To verify that prescribed fire stimulated native vigor rather than long-term degradation, peak summer greenness (July–August NDVI) was computed across historical baselines (2022–2024 average) and compared against post-fire Summer 2025 performance.
+        </p>
+        <p class="text-gray-300 mb-6 leading-relaxed">
+          <strong>Key Result:</strong> Open grassland and prairie units experienced significant post-burn vigor surges (e.g., <strong>+9.1% at York Prairie</strong> and <strong>+4.3% at Belmont Prairie</strong>) due to dark soil warming and thatch removal. Dense timber units like Dells of Wisconsin saw temporary canopy reductions (-3.1%), indicating desired understory thinning:
+        </p>
+
+        <div class="overflow-x-auto mb-6">
+          <table class="w-full text-left text-sm text-gray-300 border border-gray-700 rounded-lg overflow-hidden">
+            <thead class="bg-gray-800 text-emerald-400 font-semibold uppercase text-xs">
+              <tr>
+                <th class="p-3 border-b border-gray-700">Unit Name</th>
+                <th class="p-3 border-b border-gray-700">Pre-Fire Mean (2022–2024)</th>
+                <th class="p-3 border-b border-gray-700">Post-Fire Mean (Summer 2025)</th>
+                <th class="p-3 border-b border-gray-700">Vigor Change (%)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-800 bg-gray-900/50">
+              <tr><td class="p-3 font-medium text-white">avoca</td><td class="p-3 font-mono">0.684</td><td class="p-3 font-mono">0.674</td><td class="p-3 font-mono text-amber-400">-1.5%</td></tr>
+              <tr><td class="p-3 font-medium text-white">cruson_slough</td><td class="p-3 font-mono">0.657</td><td class="p-3 font-mono">0.662</td><td class="p-3 font-mono text-emerald-300">+0.9%</td></tr>
+              <tr><td class="p-3 font-medium text-white">arena</td><td class="p-3 font-mono">0.823</td><td class="p-3 font-mono">0.825</td><td class="p-3 font-mono text-emerald-300">+0.2%</td></tr>
+              <tr><td class="p-3 font-medium text-white">mazomanie</td><td class="p-3 font-mono">0.805</td><td class="p-3 font-mono">0.809</td><td class="p-3 font-mono text-emerald-300">+0.5%</td></tr>
+              <tr><td class="p-3 font-medium text-white">marbleseed</td><td class="p-3 font-mono">0.697</td><td class="p-3 font-mono">0.726</td><td class="p-3 font-mono text-emerald-300 font-bold">+4.2%</td></tr>
+              <tr><td class="p-3 font-medium text-white">blue_river</td><td class="p-3 font-mono">0.667</td><td class="p-3 font-mono">0.695</td><td class="p-3 font-mono text-emerald-300 font-bold">+4.1%</td></tr>
+              <tr class="bg-emerald-950/20"><td class="p-3 font-bold text-emerald-300">yorks (York Prairie)</td><td class="p-3 font-mono">0.702</td><td class="p-3 font-mono">0.766</td><td class="p-3 font-mono text-emerald-300 font-bold">+9.1%</td></tr>
+              <tr><td class="p-3 font-medium text-white">bakkens</td><td class="p-3 font-mono">0.753</td><td class="p-3 font-mono">0.754</td><td class="p-3 font-mono text-emerald-300">+0.2%</td></tr>
+              <tr><td class="p-3 font-medium text-white">belmont</td><td class="p-3 font-mono">0.758</td><td class="p-3 font-mono">0.791</td><td class="p-3 font-mono text-emerald-300 font-bold">+4.3%</td></tr>
+              <tr><td class="p-3 font-medium text-white">dells_wi</td><td class="p-3 font-mono">0.567</td><td class="p-3 font-mono">0.549</td><td class="p-3 font-mono text-amber-400">-3.1%</td></tr>
+              <tr><td class="p-3 font-medium text-white">hardscrabble</td><td class="p-3 font-mono">0.829</td><td class="p-3 font-mono">0.853</td><td class="p-3 font-mono text-emerald-300">+2.9%</td></tr>
+              <tr><td class="p-3 font-medium text-white">yellowstone</td><td class="p-3 font-mono">0.740</td><td class="p-3 font-mono">0.742</td><td class="p-3 font-mono text-emerald-300">+0.3%</td></tr>
+              <tr><td class="p-3 font-medium text-white">lower_narrows</td><td class="p-3 font-mono">0.848</td><td class="p-3 font-mono">0.857</td><td class="p-3 font-mono text-emerald-300">+1.0%</td></tr>
+              <tr><td class="p-3 font-medium text-white">natural_bridge</td><td class="p-3 font-mono">0.847</td><td class="p-3 font-mono">0.859</td><td class="p-3 font-mono text-emerald-300">+1.4%</td></tr>
+              <tr><td class="p-3 font-medium text-white">devils_lake</td><td class="p-3 font-mono">0.765</td><td class="p-3 font-mono">0.758</td><td class="p-3 font-mono text-amber-400">-0.9%</td></tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
       <!-- Bottom Repository & Presentation Callout -->
       <div class="my-8 text-center bg-gray-800 p-8 rounded-lg border border-gray-700">
-        <h3 class="text-xl font-bold text-white mb-3">Explore the Full Presentation & Codebase</h3>
+        <h3 class="text-xl font-bold text-white mb-3">Explore the Full Codebase & Presentation</h3>
         <p class="text-gray-300 mb-6 text-sm max-w-xl mx-auto">
-          Watch the live recorded presentation or inspect the complete Google Earth Engine JavaScript codebase and classifier setup on GitHub.
+          Inspect the complete Earth Engine JavaScript pipeline (`rx_fire-intelligence-gee`), 33-band feature stack definition, and Random Forest classifier configuration on GitHub.
         </p>
         <div class="flex flex-wrap justify-center gap-4">
           <a 
@@ -203,10 +382,13 @@ import { siteConfig } from '../../config';
             rel="noopener noreferrer"
             class="inline-flex items-center bg-red-700 hover:bg-red-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
           >
-            Watch Youtube Presentation
+            <svg class="w-5 h-5 mr-2 fill-current" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Watch YouTube Presentation
           </a>
           <a 
-            href="https://github.com/arikwaldinger" 
+            href="https://github.com/arikwaldinger/rx_fire-intelligence-gee" 
             target="_blank" 
             rel="noopener noreferrer"
             class="inline-block bg-emerald-700 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors shadow-lg"
