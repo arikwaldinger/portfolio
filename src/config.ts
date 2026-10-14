@@ -49,7 +49,7 @@ export const siteConfig = {
       skills: ["ArcGIS Pro", "Multi-Criteria Evaluation", "LiDAR", "Land Protection"],
     },
     {
-      name: "Full-Cycle Fire Intelligence & Soil Risk Model",
+      name: "Full-Cycle Prescribed Fire Intelligence & Soil Risk Model",
       description:
         "Engineered a GEE pipeline fusing Sentinel-2, SRTM DEMs, and SSURGO soil datasets with machine learning to evaluate prescribed burn effectiveness and model post-fire soil erosion risk.",
       link: "/portfolio/projects/fire-intelligence",
