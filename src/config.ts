@@ -3,6 +3,7 @@ export const siteConfig = {
   title: "Geospatial Specialist | M.S. Environmental Observation & Informatics",
   description: "Portfolio of Arik Waldinger — Spatial Data Specialist, Remote Sensing Analyst, and Natural Resource Operator.",
   accentColor: "#1b4332",
+  profileImage: "/portfolio/AboutPhoto.png",
 
   social: {
     email: "awaldinger9@gmail.com",
